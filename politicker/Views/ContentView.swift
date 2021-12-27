@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State var bills: [Bill]
-    
-    var likedBills: [Bill] {
-        get { bills.filter { $0.liked } }
-    }
 
     var body: some View {
+        let likedBills: Binding<[Bill]> = Binding(
+            get: { bills.filter { $0.liked } },
+            set: { _ in }
+        )
+        
         VStack {
             TabView() {
                 ScrollView(showsIndicators: false) {
@@ -25,7 +26,7 @@ struct ContentView: View {
                     .padding(.leading, 10.0)
                     .padding(.trailing, 10.0)
                 ScrollView(showsIndicators: false) {
-                    BillListView(title: "Liked", bills: Binding.constant(likedBills))
+                    BillListView(title: "Liked", bills: likedBills)
                 }.tabItem {
                     Image(systemName: "heart")
                 }.tag(2)
