@@ -7,11 +7,15 @@
 
 import SwiftUI
 
+let bills = [
+    Bill(title: "", subTitle: "", sponsor: "", state: "", party: "", updatedAt: "", description: "", categories: [], liked: false)
+]
+
 @main
 struct politickerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(bills: bills)
         }
     }
 }

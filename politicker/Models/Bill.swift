@@ -5,7 +5,7 @@
 //  Created by Harrison Borges on 12/27/21.
 //
 
-struct Bill {
+struct Bill: Hashable {
     var title: String
     var subTitle: String
     var sponsor: String
@@ -15,4 +15,6 @@ struct Bill {
     
     var description: String
     var categories: [String]
+    
+    var liked: Bool
 }
