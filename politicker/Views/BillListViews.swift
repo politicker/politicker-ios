@@ -8,17 +8,19 @@
 import SwiftUI
 
 struct BillListView: View {
+    var title: String
     @Binding var bills: [Bill]
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Bills")
-                .font(.largeTitle)
+            Text(title)
+                .font(.bold(.largeTitle)())
             
             Spacer()
             
             ForEach($bills, id: \.self) { bill in
                 BillListItem(bill: bill)
+                    .padding(.bottom, 20.0)
             }
         }
     }
@@ -28,7 +30,7 @@ struct BillListItem: View {
     @Binding var bill: Bill
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             HStack {
                 Text(bill.title)
                     .font(.title3)
@@ -43,14 +45,24 @@ struct BillListItem: View {
             }.font(.subheadline).foregroundColor(Color.secondary)
             
             Text(bill.description)
-                .font(.caption)
-            
+                .font(.body)
+
             HStack {
                 ForEach(bill.categories, id: \.self) { category in
                     BillCategoryCapsule(text: BillCategory(rawValue: category)!)
                 }
                 Spacer()
-                Image(systemName: "heart")
+                Button {
+                    bill.liked = !bill.liked
+                } label: {
+                    if bill.liked {
+                        Image(systemName: "heart.fill")
+                            .foregroundColor(Color.red)
+                    } else {
+                        Image(systemName: "heart")
+                            .foregroundColor(Color.black)
+                    }
+                }
             }
         }
     }
@@ -89,7 +101,7 @@ enum BillCategory: String {
     case environment
 }
 
-struct BillListView_Previews: PreviewProvider {
+struct BillListViews_Previews: PreviewProvider {
     static private var bill = Binding.constant(
         Bill(title: "H.RES.859", subTitle: "Introduced 2020-01-05", sponsor: "Doris Matsui", state: "CA", party: "D", updatedAt: "Updated 3 days ago", description: "To ensure that goods made with forced labor in the Xinjiang Uyghur Autonomous Region of the People's Republic of China do not enter the United States market, and for other purposes.", categories: ["science", "technology"], liked: false)
     )
@@ -106,6 +118,6 @@ struct BillListView_Previews: PreviewProvider {
     
     static var previews: some View {
         BillListItem(bill: bill)
-        BillListView(bills: bills)
+        BillListView(title: "Bills", bills: bills)
     }
 }
