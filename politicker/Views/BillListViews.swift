@@ -22,7 +22,13 @@ struct BillListView: View {
                 BillListItem(bill: bill)
                     .padding(.bottom, 20.0)
             }
-        }
+        }.frame(
+            minWidth: 0,
+            maxWidth: .infinity,
+            minHeight: 0,
+            maxHeight: .infinity,
+            alignment: .leading
+        )
     }
 }
 
@@ -119,5 +125,6 @@ struct BillListViews_Previews: PreviewProvider {
     static var previews: some View {
         BillListItem(bill: bill)
         BillListView(title: "Bills", bills: bills)
+        BillListView(title: "No Bills", bills: Binding.constant([]))
     }
 }
