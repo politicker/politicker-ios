@@ -13,6 +13,9 @@
 		8428D2D2277A354D004E546A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8428D2D1277A354D004E546A /* Preview Assets.xcassets */; };
 		8428D2DE277A3CD8004E546A /* BillListViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2DD277A3CD8004E546A /* BillListViews.swift */; };
 		8428D2E1277A520F004E546A /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2E0277A520F004E546A /* Bill.swift */; };
+		8428D2E4277A77E2004E546A /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 8428D2E3277A77E2004E546A /* Apollo */; };
+		8428D2E6277A77E2004E546A /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = 8428D2E5277A77E2004E546A /* ApolloCodegenLib */; };
+		8428D2E9277A79AC004E546A /* politickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2E8277A79AC004E546A /* politickerApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,7 @@
 		8428D2D1277A354D004E546A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8428D2DD277A3CD8004E546A /* BillListViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListViews.swift; sourceTree = "<group>"; };
 		8428D2E0277A520F004E546A /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		8428D2E8277A79AC004E546A /* politickerApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = politickerApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +34,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8428D2E4277A77E2004E546A /* Apollo in Frameworks */,
+				8428D2E6277A77E2004E546A /* ApolloCodegenLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +61,7 @@
 		8428D2C9277A354C004E546A /* politicker */ = {
 			isa = PBXGroup;
 			children = (
+				8428D2E8277A79AC004E546A /* politickerApp.swift */,
 				8428D2DF277A3F5B004E546A /* Models */,
 				8428D2DC277A3647004E546A /* Views */,
 				8428D2CA277A354C004E546A /* politickerApp.swift */,
@@ -96,6 +103,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8428D2D5277A354D004E546A /* Build configuration list for PBXNativeTarget "politicker" */;
 			buildPhases = (
+				8428D2E7277A78A5004E546A /* Apollo */,
 				8428D2C3277A354C004E546A /* Sources */,
 				8428D2C4277A354C004E546A /* Frameworks */,
 				8428D2C5277A354C004E546A /* Resources */,
@@ -105,6 +113,10 @@
 			dependencies = (
 			);
 			name = politicker;
+			packageProductDependencies = (
+				8428D2E3277A77E2004E546A /* Apollo */,
+				8428D2E5277A77E2004E546A /* ApolloCodegenLib */,
+			);
 			productName = politicker;
 			productReference = 8428D2C7277A354C004E546A /* politicker.app */;
 			productType = "com.apple.product-type.application";
@@ -133,6 +145,9 @@
 				Base,
 			);
 			mainGroup = 8428D2BE277A354C004E546A;
+			packageReferences = (
+				8428D2E2277A77E2004E546A /* XCRemoteSwiftPackageReference "apollo-ios" */,
+			);
 			productRefGroup = 8428D2C8277A354C004E546A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -154,11 +169,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8428D2E7277A78A5004E546A /* Apollo */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Apollo;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n# \"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://apollo-fullstack-tutorial.herokuapp.com/\"\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8428D2C3277A354C004E546A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8428D2E9277A79AC004E546A /* politickerApp.swift in Sources */,
 				8428D2E1277A520F004E546A /* Bill.swift in Sources */,
 				8428D2CD277A354C004E546A /* ContentView.swift in Sources */,
 				8428D2CB277A354C004E546A /* politickerApp.swift in Sources */,
@@ -363,6 +400,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8428D2E2277A77E2004E546A /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8428D2E3277A77E2004E546A /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8428D2E2277A77E2004E546A /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+		8428D2E5277A77E2004E546A /* ApolloCodegenLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8428D2E2277A77E2004E546A /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = ApolloCodegenLib;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8428D2BF277A354C004E546A /* Project object */;
 }
