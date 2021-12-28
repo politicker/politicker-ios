@@ -38,6 +38,16 @@ struct ContentView: View {
                 }.tag(3)
             }
         }
+        .onAppear {
+            Network.shared.apollo.fetch(query: BillsQuery()) { result in
+                switch result {
+                case .success:
+                    print("Got bills")
+                case .failure(let err):
+                    print("Failed to get bills: \(err)")
+                }
+            }
+        }
     }
 }
 

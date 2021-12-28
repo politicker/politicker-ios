@@ -1,0 +1,18 @@
+query Bills {
+  bills {
+    id
+    shortTitle
+    summary
+    sponsorName
+    likeCount
+    sponsorParty
+    sponsorState
+    sponsorTitle
+    statuses {
+        id
+    }
+    likes {
+      id
+    }
+  }
+}
