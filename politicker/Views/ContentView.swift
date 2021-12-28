@@ -6,16 +6,20 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
     @State var bills: [Bill]
-
+    
+    @EnvironmentObject var billViewModel: BillViewModel
+    @State var billsViewModel = BillViewModel()
+    
     var body: some View {
         let likedBills: Binding<[Bill]> = Binding(
             get: { bills.filter { $0.liked } },
             set: { _ in }
         )
-        
+
         VStack {
             TabView() {
                 ScrollView(showsIndicators: false) {
@@ -38,20 +42,12 @@ struct ContentView: View {
                 }.tag(3)
             }
         }
-        .onAppear {
-            Network.shared.apollo.fetch(query: BillsQuery()) { result in
-                switch result {
-                case .success:
-                    print("Got bills")
-                case .failure(let err):
-                    print("Failed to get bills: \(err)")
-                }
-            }
-        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static private let billsViewModel = BillViewModel()
+
     static private var bills = [
         Bill(title: "H.RES.859", subTitle: "Introduced 2020-01-05", sponsor: "Doris Matsui", state: "CA", party: "D", updatedAt: "Updated 3 days ago", description: "To ensure that goods made with forced labor in the Xinjiang Uyghur Autonomous Region of the People's Republic of China do not enter the United States market, and for other purposes.", categories: ["science", "technology"], liked: false),
         
@@ -64,5 +60,6 @@ struct ContentView_Previews: PreviewProvider {
     
     static var previews: some View {
         ContentView(bills: bills)
+            .environmentObject(billsViewModel)
     }
 }

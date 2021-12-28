@@ -10,24 +10,28 @@ import Combine
 
 final class BillViewModel: ObservableObject {
     @Published var bills: [Bills.Bill] = []
-
+    
     func fetch() {
         Network.shared.apollo.fetch(query: BillsQuery()) { result in
-          switch result {
-          case .success(let graphQLResult):
-            print("Success! Result: \(graphQLResult)")
-          case .failure(let error):
-            print("Failure! Error: \(error)")
-          }
+            switch result {
+            case .success(let graphQLResult):
+                print("Success! Result: \(graphQLResult)")
+                
+                if let bills = graphQLResult.data {
+                    self.bills = self.process(data: bills)
+                }
+            case .failure(let error):
+                print("Failure! Error: \(error)")
+            }
         }
     }
     
     func process(data: BillData) -> [Bills.Bill] {
-        return Bills.Bill(data)
+        return Bills(data).bills
     }
     
     init() {
         fetch()
     }
-
+    
 }

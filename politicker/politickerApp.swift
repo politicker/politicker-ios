@@ -25,12 +25,12 @@ let bills = [
 
 @main
 struct politickerApp: App {
-    @State var billViewModel = BillViewModel()
-    
+    @StateObject var billsViewModel = BillViewModel()
+
     var body: some Scene {
         WindowGroup {
             ContentView(bills: bills)
-                .environmentObject(billViewModel)
+                .environmentObject(billsViewModel)
         }
     }
 }

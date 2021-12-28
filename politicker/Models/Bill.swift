@@ -5,7 +5,7 @@
 //  Created by Harrison Borges on 12/27/21.
 //
 
-struct Bill: Decodable {
+struct Bill: Hashable {
     var title: String
     var subTitle: String
     var sponsor: String
@@ -23,7 +23,7 @@ typealias BillData = BillsQuery.Data
 
 struct Bills: Decodable {
     var bills: [Bill]
-    
+
     init(_ bills: BillData?) {
         self.bills = bills?.bills.map({ bill -> Bills.Bill in
             Bill(bill)
@@ -41,7 +41,7 @@ struct Bills: Decodable {
         var statuses: [Status]
         var likes: [Like]
         var likeCount: Int
-        
+
         init(_ bill: BillData.Bill) {
             self.id = bill.id
             self.shortTitle = bill.shortTitle
