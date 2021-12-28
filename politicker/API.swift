@@ -14,6 +14,7 @@ public final class BillsQuery: GraphQLQuery {
         id
         shortTitle
         summary
+        number
         sponsorName
         likeCount
         sponsorParty
@@ -27,6 +28,7 @@ public final class BillsQuery: GraphQLQuery {
           __typename
           id
         }
+        liked
       }
     }
     """
@@ -73,6 +75,7 @@ public final class BillsQuery: GraphQLQuery {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("shortTitle", type: .nonNull(.scalar(String.self))),
           GraphQLField("summary", type: .nonNull(.scalar(String.self))),
+          GraphQLField("number", type: .nonNull(.scalar(String.self))),
           GraphQLField("sponsorName", type: .nonNull(.scalar(String.self))),
           GraphQLField("likeCount", type: .nonNull(.scalar(Int.self))),
           GraphQLField("sponsorParty", type: .nonNull(.scalar(String.self))),
@@ -80,6 +83,7 @@ public final class BillsQuery: GraphQLQuery {
           GraphQLField("sponsorTitle", type: .nonNull(.scalar(String.self))),
           GraphQLField("statuses", type: .nonNull(.list(.nonNull(.object(Status.selections))))),
           GraphQLField("likes", type: .nonNull(.list(.nonNull(.object(Like.selections))))),
+          GraphQLField("liked", type: .nonNull(.scalar(Bool.self))),
         ]
       }
 
@@ -89,8 +93,8 @@ public final class BillsQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID, shortTitle: String, summary: String, sponsorName: String, likeCount: Int, sponsorParty: String, sponsorState: String, sponsorTitle: String, statuses: [Status], likes: [Like]) {
-        self.init(unsafeResultMap: ["__typename": "Bill", "id": id, "shortTitle": shortTitle, "summary": summary, "sponsorName": sponsorName, "likeCount": likeCount, "sponsorParty": sponsorParty, "sponsorState": sponsorState, "sponsorTitle": sponsorTitle, "statuses": statuses.map { (value: Status) -> ResultMap in value.resultMap }, "likes": likes.map { (value: Like) -> ResultMap in value.resultMap }])
+      public init(id: GraphQLID, shortTitle: String, summary: String, number: String, sponsorName: String, likeCount: Int, sponsorParty: String, sponsorState: String, sponsorTitle: String, statuses: [Status], likes: [Like], liked: Bool) {
+        self.init(unsafeResultMap: ["__typename": "Bill", "id": id, "shortTitle": shortTitle, "summary": summary, "number": number, "sponsorName": sponsorName, "likeCount": likeCount, "sponsorParty": sponsorParty, "sponsorState": sponsorState, "sponsorTitle": sponsorTitle, "statuses": statuses.map { (value: Status) -> ResultMap in value.resultMap }, "likes": likes.map { (value: Like) -> ResultMap in value.resultMap }, "liked": liked])
       }
 
       public var __typename: String {
@@ -126,6 +130,15 @@ public final class BillsQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "summary")
+        }
+      }
+
+      public var number: String {
+        get {
+          return resultMap["number"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "number")
         }
       }
 
@@ -189,6 +202,15 @@ public final class BillsQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue.map { (value: Like) -> ResultMap in value.resultMap }, forKey: "likes")
+        }
+      }
+
+      public var liked: Bool {
+        get {
+          return resultMap["liked"]! as! Bool
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "liked")
         }
       }
 

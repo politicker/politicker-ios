@@ -3,6 +3,7 @@ query Bills {
     id
     shortTitle
     summary
+    number
     sponsorName
     likeCount
     sponsorParty
@@ -14,5 +15,6 @@ query Bills {
     likes {
       id
     }
+    liked
   }
 }

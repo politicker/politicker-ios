@@ -30,7 +30,7 @@ struct Bills: Decodable {
         }) ?? []
     }
     
-    struct Bill: Identifiable, Decodable {
+    struct Bill: Identifiable, Decodable, Hashable {
         var id: String
         var shortTitle: String
         var sponsorName: String
@@ -38,9 +38,11 @@ struct Bills: Decodable {
         var sponsorState: String
         var sponsorTitle: String
         var summary: String
+        var number: String
         var statuses: [Status]
         var likes: [Like]
         var likeCount: Int
+        var liked: Bool
 
         init(_ bill: BillData.Bill) {
             self.id = bill.id
@@ -49,11 +51,21 @@ struct Bills: Decodable {
             self.sponsorParty = bill.sponsorParty
             self.sponsorState = bill.sponsorState
             self.sponsorTitle = bill.sponsorTitle
+            self.number = bill.number
             self.summary = bill.summary
             self.likeCount = bill.likeCount
+            self.liked = bill.liked
             
             self.statuses = bill.statuses.map { Status($0) }
             self.likes = bill.likes.map { Like($0) }
+        }
+        
+        static func == (lhs: Bills.Bill, rhs: Bills.Bill) -> Bool {
+            return lhs.id < rhs.id
+        }
+        
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(id)
         }
         
         struct Status: Identifiable, Decodable {

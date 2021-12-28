@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BillListView: View {
     var title: String
-    @Binding var bills: [Bill]
+    let bills: [Bills.Bill]
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -18,7 +18,7 @@ struct BillListView: View {
             
             Spacer()
             
-            ForEach($bills, id: \.self) { bill in
+            ForEach(bills, id: \.self) { bill in
                 BillListItem(bill: bill)
                     .padding(.bottom, 20.0)
             }
@@ -33,33 +33,33 @@ struct BillListView: View {
 }
 
 struct BillListItem: View {
-    @Binding var bill: Bill
+    var bill: Bills.Bill
 
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(bill.title)
+                Text(bill.number)
                     .font(.title3)
                 Spacer()
-                Text(bill.updatedAt)
+                Text("3 days ago")
                     .font(.caption)
             }
             HStack {
-                Text(bill.subTitle)
+                Text(bill.shortTitle)
                 Spacer()
-                Text("\(bill.sponsor) · \(bill.state) (\(bill.party))")
+                Text("\(bill.sponsorName) · \(bill.sponsorState) (\(bill.sponsorParty))")
             }.font(.subheadline).foregroundColor(Color.secondary)
             
-            Text(bill.description)
+            Text(bill.summary)
                 .font(.body)
 
             HStack {
-                ForEach(bill.categories, id: \.self) { category in
-                    BillCategoryCapsule(text: BillCategory(rawValue: category)!)
-                }
+//                ForEach(bill.categories, id: \.self) { category in
+//                    BillCategoryCapsule(text: BillCategory(rawValue: category)!)
+//                }
                 Spacer()
                 Button {
-                    bill.liked = !bill.liked
+//                    bill.liked = !bill.liked
                 } label: {
                     if bill.liked {
                         Image(systemName: "heart.fill")
@@ -123,8 +123,9 @@ struct BillListViews_Previews: PreviewProvider {
     ])
     
     static var previews: some View {
-        BillListItem(bill: bill)
-        BillListView(title: "Bills", bills: bills)
-        BillListView(title: "No Bills", bills: Binding.constant([]))
+//        BillListItem(bill: bill)
+//        BillListView(title: "Bills", bills: bills)
+//        BillListView(title: "No Bills", bills: Binding.constant([]))
+        Text("Fix these to work with graphql")
     }
 }

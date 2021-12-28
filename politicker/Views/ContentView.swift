@@ -14,16 +14,17 @@ struct ContentView: View {
     @EnvironmentObject var billViewModel: BillViewModel
     @State var billsViewModel = BillViewModel()
     
+    var likedBills: [Bills.Bill] {
+        get {
+            billsViewModel.bills.filter { $0.liked }
+        }
+    }
+    
     var body: some View {
-        let likedBills: Binding<[Bill]> = Binding(
-            get: { bills.filter { $0.liked } },
-            set: { _ in }
-        )
-
         VStack {
             TabView() {
                 ScrollView(showsIndicators: false) {
-                    BillListView(title: "Bills", bills: $bills)
+                    BillListView(title: "Bills", bills: billsViewModel.bills)
                 }.tabItem {
                     Image(systemName: "house")
                 }.tag(1)
