@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 final class BillViewModel: ObservableObject {
-    @Published var bills: [Bills.Bill] = []
+    @Published var bills: [Bill] = []
     
     func fetch() {
         Network.shared.apollo.fetch(query: BillsQuery()) { result in
@@ -26,7 +26,7 @@ final class BillViewModel: ObservableObject {
         }
     }
     
-    func process(data: BillData) -> [Bills.Bill] {
+    func process(data: BillData) -> [Bill] {
         return Bills(data).bills
     }
     

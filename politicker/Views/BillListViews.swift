@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BillListView: View {
     var title: String
-    let bills: [Bills.Bill]
+    let bills: [Bill]
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -33,7 +33,7 @@ struct BillListView: View {
 }
 
 struct BillListItem: View {
-    var bill: Bills.Bill
+    var bill: Bill
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -107,21 +107,7 @@ enum BillCategory: String {
     case environment
 }
 
-struct BillListViews_Previews: PreviewProvider {
-    static private var bill = Binding.constant(
-        Bill(title: "H.RES.859", subTitle: "Introduced 2020-01-05", sponsor: "Doris Matsui", state: "CA", party: "D", updatedAt: "Updated 3 days ago", description: "To ensure that goods made with forced labor in the Xinjiang Uyghur Autonomous Region of the People's Republic of China do not enter the United States market, and for other purposes.", categories: ["science", "technology"], liked: false)
-    )
-    
-    static var bills = Binding.constant([
-        Bill(title: "H.RES.859", subTitle: "Introduced 2020-01-05", sponsor: "Doris Matsui", state: "CA", party: "D", updatedAt: "Updated 3 days ago", description: "To ensure that goods made with forced labor in the Xinjiang Uyghur Autonomous Region of the People's Republic of China do not enter the United States market, and for other purposes.", categories: ["science", "technology"], liked: false),
-        
-        Bill(title: "H.RES.859", subTitle: "Introduced 2020-01-05", sponsor: "Doris Matsui", state: "CA", party: "D", updatedAt: "Updated 3 days ago", description: "To ensure that goods made with forced labor in the Xinjiang Uyghur Autonomous Region of the People's Republic of China do not enter the United States market, and for other purposes.", categories: ["science", "technology"], liked: false),
-        
-        Bill(title: "H.RES.859", subTitle: "Introduced 2020-01-05", sponsor: "Doris Matsui", state: "CA", party: "D", updatedAt: "Updated 3 days ago", description: "To ensure that goods made with forced labor in the Xinjiang Uyghur Autonomous Region of the People's Republic of China do not enter the United States market, and for other purposes.", categories: ["science", "technology"], liked: false),
-        
-        Bill(title: "H.RES.859", subTitle: "Introduced 2020-01-05", sponsor: "Doris Matsui", state: "CA", party: "D", updatedAt: "Updated 3 days ago", description: "To ensure that goods made with forced labor in the Xinjiang Uyghur Autonomous Region of the People's Republic of China do not enter the United States market, and for other purposes.", categories: ["science", "technology"], liked: false)
-    ])
-    
+struct BillListViews_Previews: PreviewProvider {    
     static var previews: some View {
 //        BillListItem(bill: bill)
 //        BillListView(title: "Bills", bills: bills)

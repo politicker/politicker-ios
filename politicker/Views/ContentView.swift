@@ -14,7 +14,7 @@ struct ContentView: View {
     @EnvironmentObject var billViewModel: BillViewModel
     @State var billsViewModel = BillViewModel()
     
-    var likedBills: [Bills.Bill] {
+    var likedBills: [Bill] {
         get {
             billsViewModel.bills.filter { $0.liked }
         }
@@ -48,19 +48,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static private let billsViewModel = BillViewModel()
-
-    static private var bills = [
-        Bill(title: "H.RES.859", subTitle: "Introduced 2020-01-05", sponsor: "Doris Matsui", state: "CA", party: "D", updatedAt: "Updated 3 days ago", description: "To ensure that goods made with forced labor in the Xinjiang Uyghur Autonomous Region of the People's Republic of China do not enter the United States market, and for other purposes.", categories: ["science", "technology"], liked: false),
-        
-        Bill(title: "H.RES.859", subTitle: "Introduced 2020-01-05", sponsor: "Doris Matsui", state: "CA", party: "D", updatedAt: "Updated 3 days ago", description: "To ensure that goods made with forced labor in the Xinjiang Uyghur Autonomous Region of the People's Republic of China do not enter the United States market, and for other purposes.", categories: ["science", "technology"], liked: false),
-        
-        Bill(title: "H.RES.859", subTitle: "Introduced 2020-01-05", sponsor: "Doris Matsui", state: "CA", party: "D", updatedAt: "Updated 3 days ago", description: "To ensure that goods made with forced labor in the Xinjiang Uyghur Autonomous Region of the People's Republic of China do not enter the United States market, and for other purposes.", categories: ["science", "technology"], liked: false),
-        
-        Bill(title: "H.RES.859", subTitle: "Introduced 2020-01-05", sponsor: "Doris Matsui", state: "CA", party: "D", updatedAt: "Updated 3 days ago", description: "To ensure that goods made with forced labor in the Xinjiang Uyghur Autonomous Region of the People's Republic of China do not enter the United States market, and for other purposes.", categories: ["science", "technology"], liked: false)
-    ]
     
     static var previews: some View {
-        ContentView(bills: bills)
+        ContentView(bills: [])
             .environmentObject(billsViewModel)
     }
 }
