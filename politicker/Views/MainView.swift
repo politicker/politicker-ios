@@ -19,28 +19,22 @@ struct MainView: View {
     var body: some View {
         VStack {
             TabView() {
-                NavigationView {
-                    ScrollView(showsIndicators: false) {
-                        BillListView(title: "Bills", bills: billsViewModel.bills)
-                    }
+                ScrollView(showsIndicators: false) {
+                    BillListView(title: "Bills", bills: billsViewModel.bills)
                 }.tabItem {
                     Image(systemName: "house")
                 }.tag(1)
                     .padding(.leading, 10.0)
                     .padding(.trailing, 10.0)
-                NavigationView {
-                    ScrollView(showsIndicators: false) {
-                        BillListView(title: "Liked", bills: likedBills)
-                    }
+                ScrollView(showsIndicators: false) {
+                    BillListView(title: "Liked", bills: likedBills)
                 }.tabItem {
                     Image(systemName: "heart")
                 }.tag(2)
                     .padding(.leading, 10.0)
                     .padding(.trailing, 10.0)
-                NavigationView {
-                    Text("Tab Content 3").tabItem {
-                        Image(systemName: "gear")
-                    }
+                Text("Tab Content 3").tabItem {
+                    Image(systemName: "gear")
                 }.tag(3)
             }
         }
