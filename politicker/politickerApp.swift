@@ -13,7 +13,7 @@ struct politickerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(bills: [])
+            MainView()
                 .environmentObject(billsViewModel)
         }
     }

@@ -33,5 +33,4 @@ final class BillViewModel: ObservableObject {
     init() {
         fetch()
     }
-    
 }

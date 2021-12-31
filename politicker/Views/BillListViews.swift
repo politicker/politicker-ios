@@ -18,9 +18,11 @@ struct BillListView: View {
             
             Spacer()
             
-            ForEach(bills, id: \.self) { bill in
+            ForEach(bills) { bill in
+                Text(bill.summary)
                 BillListItem(bill: bill)
                     .padding(.bottom, 20.0)
+                    .disabled(true)
             }
         }.frame(
             minWidth: 0,
@@ -54,12 +56,10 @@ struct BillListItem: View {
                 .font(.body)
 
             HStack {
-//                ForEach(bill.categories, id: \.self) { category in
-//                    BillCategoryCapsule(text: BillCategory(rawValue: category)!)
-//                }
                 Spacer()
                 Button {
 //                    bill.liked = !bill.liked
+                    print("hi")
                 } label: {
                     if bill.liked {
                         Image(systemName: "heart.fill")
@@ -72,39 +72,6 @@ struct BillListItem: View {
             }
         }
     }
-}
-
-struct BillCategoryCapsule: View {
-    var text: BillCategory
-    
-    var color: Color {
-        get {
-            switch self.text {
-            case .science:
-                return Color.blue
-            case .technology:
-                return Color.green
-            case .environment:
-                return Color.yellow
-            }
-        }
-    }
-    
-    var body: some View {
-        Text(text.rawValue)
-            .font(.caption)
-            .padding(.leading, 10.0)
-            .padding(.trailing, 10.0)
-            .foregroundColor(.white)
-            .background(color)
-            .clipShape(Capsule())
-    }
-}
-
-enum BillCategory: String {
-    case science
-    case technology
-    case environment
 }
 
 struct BillListViews_Previews: PreviewProvider {    

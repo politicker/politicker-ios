@@ -5,20 +5,6 @@
 //  Created by Harrison Borges on 12/27/21.
 //
 
-//struct Bill: Hashable {
-//    var title: String
-//    var subTitle: String
-//    var sponsor: String
-//    var state: String
-//    var party: String
-//    var updatedAt: String
-//
-//    var description: String
-//    var categories: [String]
-//
-//    var liked: Bool
-//}
-
 typealias BillData = BillsQuery.Data
 
 struct Bills: Decodable {
@@ -42,6 +28,7 @@ struct Bill: Identifiable, Decodable, Hashable {
     var number: String
     var statuses: [Status]
     var likes: [Like]
+    var categories: [Category]
     var likeCount: Int
     var liked: Bool
 
@@ -59,14 +46,7 @@ struct Bill: Identifiable, Decodable, Hashable {
         
         self.statuses = bill.statuses.map { Status($0) }
         self.likes = bill.likes.map { Like($0) }
-    }
-    
-    static func == (lhs: Bill, rhs: Bill) -> Bool {
-        return lhs.id < rhs.id
-    }
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+        self.categories = bill.categories.map { Category($0) }
     }
     
     struct Status: Identifiable, Decodable {
@@ -76,12 +56,33 @@ struct Bill: Identifiable, Decodable, Hashable {
             self.id = status.id
         }
     }
-    
+
     struct Like: Identifiable, Decodable {
         var id: String
         
         init(_ like: BillData.Bill.Like) {
             self.id = like.id
         }
+    }
+
+    struct Category: Identifiable, Decodable {
+        var id: String
+        var name: String
+        
+        init(_ category: BillData.Bill.Category) {
+            self.id = category.id
+            self.name = category.name
+        }
+    }
+}
+
+// Hashable & Equatable conforms
+extension Bill {
+    static func == (lhs: Bill, rhs: Bill) -> Bool {
+        return lhs.id < rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

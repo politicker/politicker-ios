@@ -13,7 +13,11 @@ query Bills {
         id
     }
     likes {
-      id
+        id
+    }
+    categories {
+        id
+        name
     }
     liked
   }

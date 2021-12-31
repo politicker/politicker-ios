@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8428D2CB277A354C004E546A /* politickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2CA277A354C004E546A /* politickerApp.swift */; };
-		8428D2CD277A354C004E546A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2CC277A354C004E546A /* ContentView.swift */; };
+		8428D2CD277A354C004E546A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2CC277A354C004E546A /* MainView.swift */; };
 		8428D2CF277A354D004E546A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8428D2CE277A354D004E546A /* Assets.xcassets */; };
 		8428D2D2277A354D004E546A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8428D2D1277A354D004E546A /* Preview Assets.xcassets */; };
 		8428D2DE277A3CD8004E546A /* BillListViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2DD277A3CD8004E546A /* BillListViews.swift */; };
@@ -24,7 +24,7 @@
 /* Begin PBXFileReference section */
 		8428D2C7277A354C004E546A /* politicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = politicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8428D2CA277A354C004E546A /* politickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = politickerApp.swift; sourceTree = "<group>"; };
-		8428D2CC277A354C004E546A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8428D2CC277A354C004E546A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8428D2CE277A354D004E546A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8428D2D1277A354D004E546A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8428D2DD277A3CD8004E546A /* BillListViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListViews.swift; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 		8428D2DC277A3647004E546A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8428D2CC277A354C004E546A /* ContentView.swift */,
+				8428D2CC277A354C004E546A /* MainView.swift */,
 				8428D2DD277A3CD8004E546A /* BillListViews.swift */,
 			);
 			path = Views;
@@ -214,7 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8428D2E1277A520F004E546A /* Bill.swift in Sources */,
-				8428D2CD277A354C004E546A /* ContentView.swift in Sources */,
+				8428D2CD277A354C004E546A /* MainView.swift in Sources */,
 				8428D2F4277ABBAA004E546A /* BillsViewModel.swift in Sources */,
 				8428D2F0277AB8B1004E546A /* Network.swift in Sources */,
 				8428D2CB277A354C004E546A /* politickerApp.swift in Sources */,

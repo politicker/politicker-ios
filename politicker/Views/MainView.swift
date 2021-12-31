@@ -6,13 +6,9 @@
 //
 
 import SwiftUI
-import Combine
 
-struct ContentView: View {
-    @State var bills: [Bill]
-    
-    @EnvironmentObject var billViewModel: BillViewModel
-    @State var billsViewModel = BillViewModel()
+struct MainView: View {
+    @EnvironmentObject var billsViewModel: BillViewModel
     
     var likedBills: [Bill] {
         get {
@@ -23,23 +19,28 @@ struct ContentView: View {
     var body: some View {
         VStack {
             TabView() {
-                ScrollView(showsIndicators: false) {
-                    BillListView(title: "Bills", bills: billsViewModel.bills)
+                NavigationView {
+                    ScrollView(showsIndicators: false) {
+                        BillListView(title: "Bills", bills: billsViewModel.bills)
+                    }
                 }.tabItem {
                     Image(systemName: "house")
                 }.tag(1)
                     .padding(.leading, 10.0)
                     .padding(.trailing, 10.0)
-                ScrollView(showsIndicators: false) {
-                    BillListView(title: "Liked", bills: likedBills)
+                NavigationView {
+                    ScrollView(showsIndicators: false) {
+                        BillListView(title: "Liked", bills: likedBills)
+                    }
                 }.tabItem {
                     Image(systemName: "heart")
                 }.tag(2)
                     .padding(.leading, 10.0)
                     .padding(.trailing, 10.0)
-                
-                Text("Tab Content 3").tabItem {
-                    Image(systemName: "gear")
+                NavigationView {
+                    Text("Tab Content 3").tabItem {
+                        Image(systemName: "gear")
+                    }
                 }.tag(3)
             }
         }
@@ -50,7 +51,7 @@ struct ContentView_Previews: PreviewProvider {
     static private let billsViewModel = BillViewModel()
     
     static var previews: some View {
-        ContentView(bills: [])
+        MainView()
             .environmentObject(billsViewModel)
     }
 }

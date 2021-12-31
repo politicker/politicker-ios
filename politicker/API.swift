@@ -28,6 +28,11 @@ public final class BillsQuery: GraphQLQuery {
           __typename
           id
         }
+        categories {
+          __typename
+          id
+          name
+        }
         liked
       }
     }
@@ -83,6 +88,7 @@ public final class BillsQuery: GraphQLQuery {
           GraphQLField("sponsorTitle", type: .nonNull(.scalar(String.self))),
           GraphQLField("statuses", type: .nonNull(.list(.nonNull(.object(Status.selections))))),
           GraphQLField("likes", type: .nonNull(.list(.nonNull(.object(Like.selections))))),
+          GraphQLField("categories", type: .nonNull(.list(.nonNull(.object(Category.selections))))),
           GraphQLField("liked", type: .nonNull(.scalar(Bool.self))),
         ]
       }
@@ -93,8 +99,8 @@ public final class BillsQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID, shortTitle: String, summary: String, number: String, sponsorName: String, likeCount: Int, sponsorParty: String, sponsorState: String, sponsorTitle: String, statuses: [Status], likes: [Like], liked: Bool) {
-        self.init(unsafeResultMap: ["__typename": "Bill", "id": id, "shortTitle": shortTitle, "summary": summary, "number": number, "sponsorName": sponsorName, "likeCount": likeCount, "sponsorParty": sponsorParty, "sponsorState": sponsorState, "sponsorTitle": sponsorTitle, "statuses": statuses.map { (value: Status) -> ResultMap in value.resultMap }, "likes": likes.map { (value: Like) -> ResultMap in value.resultMap }, "liked": liked])
+      public init(id: GraphQLID, shortTitle: String, summary: String, number: String, sponsorName: String, likeCount: Int, sponsorParty: String, sponsorState: String, sponsorTitle: String, statuses: [Status], likes: [Like], categories: [Category], liked: Bool) {
+        self.init(unsafeResultMap: ["__typename": "Bill", "id": id, "shortTitle": shortTitle, "summary": summary, "number": number, "sponsorName": sponsorName, "likeCount": likeCount, "sponsorParty": sponsorParty, "sponsorState": sponsorState, "sponsorTitle": sponsorTitle, "statuses": statuses.map { (value: Status) -> ResultMap in value.resultMap }, "likes": likes.map { (value: Like) -> ResultMap in value.resultMap }, "categories": categories.map { (value: Category) -> ResultMap in value.resultMap }, "liked": liked])
       }
 
       public var __typename: String {
@@ -205,6 +211,15 @@ public final class BillsQuery: GraphQLQuery {
         }
       }
 
+      public var categories: [Category] {
+        get {
+          return (resultMap["categories"] as! [ResultMap]).map { (value: ResultMap) -> Category in Category(unsafeResultMap: value) }
+        }
+        set {
+          resultMap.updateValue(newValue.map { (value: Category) -> ResultMap in value.resultMap }, forKey: "categories")
+        }
+      }
+
       public var liked: Bool {
         get {
           return resultMap["liked"]! as! Bool
@@ -288,6 +303,55 @@ public final class BillsQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+      }
+
+      public struct Category: GraphQLSelectionSet {
+        public static let possibleTypes: [String] = ["Category"]
+
+        public static var selections: [GraphQLSelection] {
+          return [
+            GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+            GraphQLField("name", type: .nonNull(.scalar(String.self))),
+          ]
+        }
+
+        public private(set) var resultMap: ResultMap
+
+        public init(unsafeResultMap: ResultMap) {
+          self.resultMap = unsafeResultMap
+        }
+
+        public init(id: GraphQLID, name: String) {
+          self.init(unsafeResultMap: ["__typename": "Category", "id": id, "name": name])
+        }
+
+        public var __typename: String {
+          get {
+            return resultMap["__typename"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return resultMap["id"]! as! GraphQLID
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var name: String {
+          get {
+            return resultMap["name"]! as! String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "name")
           }
         }
       }
