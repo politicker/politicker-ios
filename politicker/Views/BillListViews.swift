@@ -7,34 +7,6 @@
 
 import SwiftUI
 
-struct BillListView: View {
-	var title: String
-	let bills: [Bill]
-	
-	let onLikeBill: (String) -> Void
-	
-	var body: some View {
-		VStack(alignment: .leading) {
-			Text(title)
-				.font(.bold(.largeTitle)())
-			
-			Spacer()
-			
-			ForEach(bills) { bill in
-				Text(bill.summary)
-				BillListItem(bill: bill, onLikeBill: onLikeBill)
-					.padding(.bottom, 20.0)
-			}
-		}.frame(
-			minWidth: 0,
-			maxWidth: .infinity,
-			minHeight: 0,
-			maxHeight: .infinity,
-			alignment: .leading
-		)
-	}
-}
-
 struct BillListItem: View {
 	var bill: Bill
 	let onLikeBill: (String) -> Void

@@ -18,16 +18,30 @@ struct MainView: View {
 	
 	var body: some View {
 		VStack {
-			TabView() {
-				ScrollView(showsIndicators: false) {
-					BillListView(title: "Bills", bills: billsViewModel.bills, onLikeBill: likeBill)
+			TabView {
+				VStack(alignment: .leading) {
+					Text("Bills")
+						.font(.bold(.largeTitle)())
+					Spacer()
+					Spacer()
+					List(billsViewModel.bills) { bill in
+						BillListItem(bill: bill, onLikeBill: likeBill)
+							.listRowSeparator(.visible, edges: .bottom)
+					}.listStyle(.plain).refreshable {
+						print("fetching more bills")
+					}
 				}.tabItem {
 					Image(systemName: "house")
 				}.tag(1)
 					.padding(.leading, 10.0)
 					.padding(.trailing, 10.0)
-				ScrollView(showsIndicators: false) {
-					BillListView(title: "Liked", bills: likedBills, onLikeBill: likeBill)
+				VStack(alignment: .leading) {
+					Text("Liked")
+						.font(.bold(.largeTitle)())
+					Spacer()
+					List(likedBills) { bill in
+						BillListItem(bill: bill, onLikeBill: likeBill)
+					}
 				}.tabItem {
 					Image(systemName: "heart")
 				}.tag(2)
@@ -36,7 +50,7 @@ struct MainView: View {
 				Text("Tab Content 3").tabItem {
 					Image(systemName: "gear")
 				}.tag(3)
-			}
+			}.accentColor(.black)
 		}
 	}
 }
