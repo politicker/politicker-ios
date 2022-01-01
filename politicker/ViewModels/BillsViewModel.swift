@@ -19,8 +19,8 @@ final class BillViewModel: ObservableObject {
 					if let bills = graphQLResult.data {
 						self.bills = self.process(data: bills.bills)
 					}
-				case .failure(let error):
-					print("Failure! Error: \(error)")
+				case .failure(let err):
+					print(err)
 			}
 		}
 	}
@@ -29,18 +29,16 @@ final class BillViewModel: ObservableObject {
 		let createLike = CreateLikeMutation(
 			input: CreateLikeInput(billId: billId)
 		)
-		
+
 		Network.shared.apollo.perform(mutation: createLike) { result in
 			switch result {
 				case .success(let graphQLResult):
 					guard let response = graphQLResult.data else {
+						print("GraphQL result missing data")
 						return
 					}
 
 					let updatedBill = response.createLike.bill.fragments.displayableBill
-					
-					print(self.bills.map { $0.id })
-					
 					self.bills = self.bills.map { bill in
 						if bill.id == updatedBill.id {
 							return Bill(updatedBill)
@@ -48,8 +46,6 @@ final class BillViewModel: ObservableObject {
 						
 						return bill
 					}
-					
-//					print(graphQLResult)
 				case.failure(let err):
 					print(err)
 			}

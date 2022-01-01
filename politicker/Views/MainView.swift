@@ -9,13 +9,13 @@ import SwiftUI
 
 struct MainView: View {
 	@EnvironmentObject var billsViewModel: BillViewModel
-
+	
 	var likedBills: [Bill] {
 		get {
 			billsViewModel.bills.filter { $0.liked }
 		}
 	}
-
+	
 	var body: some View {
 		VStack {
 			TabView() {
