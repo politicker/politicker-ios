@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct politickerApp: App {
-    @StateObject var billsViewModel = BillViewModel()
-
-    var body: some Scene {
-        WindowGroup {
-            MainView()
-                .environmentObject(billsViewModel)
-        }
-    }
+	@StateObject var billsViewModel = BillViewModel()
+	
+	var body: some Scene {
+		WindowGroup {
+			MainView()
+				.environmentObject(billsViewModel)
+		}
+	}
 }

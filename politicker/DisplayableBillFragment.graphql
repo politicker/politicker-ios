@@ -1,0 +1,15 @@
+fragment DisplayableBill on Bill {
+    id
+    liked
+    likeCount
+    number
+    categories {
+        id
+        name
+    }
+    shortTitle
+    sponsorName
+    sponsorState
+    sponsorParty
+    summary
+}

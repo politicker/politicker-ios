@@ -19,6 +19,8 @@
 		8428D2EE277AB85D004E546A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2ED277AB85D004E546A /* API.swift */; };
 		8428D2F0277AB8B1004E546A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2EF277AB8B1004E546A /* Network.swift */; };
 		8428D2F4277ABBAA004E546A /* BillsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2F3277ABBAA004E546A /* BillsViewModel.swift */; };
+		84FCF493277F85210024C2C5 /* CreateLike.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 84FCF492277F85210024C2C5 /* CreateLike.graphql */; };
+		84FCF495277FB2F00024C2C5 /* DisplayableBillFragment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 84FCF494277FB2F00024C2C5 /* DisplayableBillFragment.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		8428D2ED277AB85D004E546A /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		8428D2EF277AB8B1004E546A /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		8428D2F3277ABBAA004E546A /* BillsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsViewModel.swift; sourceTree = "<group>"; };
+		84FCF492277F85210024C2C5 /* CreateLike.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CreateLike.graphql; sourceTree = "<group>"; };
+		84FCF494277FB2F00024C2C5 /* DisplayableBillFragment.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DisplayableBillFragment.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 				8428D2CE277A354D004E546A /* Assets.xcassets */,
 				8428D2D0277A354D004E546A /* Preview Content */,
 				8428D2EF277AB8B1004E546A /* Network.swift */,
+				84FCF494277FB2F00024C2C5 /* DisplayableBillFragment.graphql */,
 			);
 			path = politicker;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 			children = (
 				8428D2CC277A354C004E546A /* MainView.swift */,
 				8428D2DD277A3CD8004E546A /* BillListViews.swift */,
+				84FCF492277F85210024C2C5 /* CreateLike.graphql */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,8 +185,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84FCF493277F85210024C2C5 /* CreateLike.graphql in Resources */,
 				8428D2D2277A354D004E546A /* Preview Assets.xcassets in Resources */,
 				8428D2EC277AB81C004E546A /* GetBills.graphql in Resources */,
+				84FCF495277FB2F00024C2C5 /* DisplayableBillFragment.graphql in Resources */,
 				8428D2CF277A354D004E546A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
