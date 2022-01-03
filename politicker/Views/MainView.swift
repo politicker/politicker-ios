@@ -10,9 +10,9 @@ import SwiftUI
 struct MainView: View {
 	@EnvironmentObject var billsViewModel: BillViewModel
 	
-	var likedBills: [Bill] {
+	var likedBills: [Matter] {
 		get {
-			billsViewModel.bills.filter { $0.liked }
+			billsViewModel.matters.filter { $0.liked }
 		}
 	}
 	
@@ -23,9 +23,9 @@ struct MainView: View {
 					Text("Bills")
 						.font(.bold(.largeTitle)())
 					Spacer()
-					Spacer()
-					List(billsViewModel.bills) { bill in
-						BillListItem(bill: bill, onLikeBill: likeBill)
+
+					List(billsViewModel.matters) { matter in
+						BillListItem(matter: matter, onLikeBill: likeBill)
 							.listRowSeparator(.visible, edges: .bottom)
 					}.listStyle(.plain).refreshable {
 						print("fetching more bills")
@@ -40,7 +40,7 @@ struct MainView: View {
 						.font(.bold(.largeTitle)())
 					Spacer()
 					List(likedBills) { bill in
-						BillListItem(bill: bill, onLikeBill: likeBill)
+						BillListItem(matter: bill, onLikeBill: likeBill)
 					}
 				}.tabItem {
 					Image(systemName: "heart")
@@ -58,7 +58,7 @@ struct MainView: View {
 // State modifiers
 extension MainView {
 	func likeBill(billId: String) {
-		billsViewModel.likeBill(billId: billId)
+		billsViewModel.likeBill(matterId: billId)
 	}
 }
 

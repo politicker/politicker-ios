@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BillListItem: View {
-	var bill: Bill
+	var matter: Matter
 	let onLikeBill: (String) -> Void
 	
 	@State private var showingAlert = false
@@ -16,27 +16,32 @@ struct BillListItem: View {
 	var body: some View {
 		VStack(alignment: .leading) {
 			HStack {
-				Text(bill.number)
+				Text(matter.committeeName)
 					.font(.title3)
 				Spacer()
 				Text("3 days ago")
 					.font(.caption)
 			}
+
 			HStack {
-				Text(bill.shortTitle)
+				Text(matter.shortDescription)
 				Spacer()
-				Text("\(bill.sponsorName) · \(bill.sponsorState) (\(bill.sponsorParty))")
 			}.font(.subheadline).foregroundColor(Color.secondary)
 			
-			Text(bill.summary)
+			HStack {
+				Spacer()
+				BillStatusView(status: "Passed")
+			}
+			
+			Text(matter.longDescription)
 				.font(.body)
 			
 			HStack {
 				Spacer()
 				Button {
-					onLikeBill(bill.id)
+					onLikeBill(matter.id)
 				} label: {
-					if bill.liked {
+					if matter.liked {
 						Image(systemName: "heart.fill")
 							.foregroundColor(Color.red)
 							.font(.system(size: 25, weight: .regular))

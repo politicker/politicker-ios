@@ -1,15 +1,19 @@
-fragment DisplayableBill on Bill {
-    id
-    liked
-    likeCount
-    number
-    categories {
-        id
-        name
-    }
-    shortTitle
-    sponsorName
-    sponsorState
-    sponsorParty
-    summary
+fragment DisplayableMatter on Matter {
+	id
+	shortDescription
+	longDescription
+	billWould
+	fileNumber
+	typeName
+	status
+	committeeName
+	lastModifiedAt
+	introducedAt
+	passedAt
+	enactedAt
+	agendaDate
+	enactmentNumber
+	updatedAt
+	liked
+	likeCount
 }

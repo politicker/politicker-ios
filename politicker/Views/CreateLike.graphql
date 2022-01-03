@@ -1,7 +1,7 @@
 mutation CreateLike($input: CreateLikeInput!) {
     createLike(input: $input) {
-        bill {
-            ...DisplayableBill
+        matter {
+            ...DisplayableMatter
         }
     }
 }

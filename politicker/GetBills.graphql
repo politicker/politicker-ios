@@ -1,5 +1,5 @@
-query Bills {
-  bills {
-    ...DisplayableBill
+query Matters {
+  matters {
+    ...DisplayableMatter
   }
 }

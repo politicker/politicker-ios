@@ -7,17 +7,16 @@
 
 import Foundation
 import Combine
-import zlib
 
 final class BillViewModel: ObservableObject {
-	@Published var bills: [Bill] = []
+	@Published var matters: [Matter] = []
 	
 	func fetch() {
-		Network.shared.apollo.fetch(query: BillsQuery()) { result in
+		Network.shared.apollo.fetch(query: MattersQuery()) { result in
 			switch result {
 				case .success(let graphQLResult):
-					if let bills = graphQLResult.data {
-						self.bills = self.process(data: bills.bills)
+					if let matters = graphQLResult.data {
+						self.matters = self.process(data: matters.matters)
 					}
 				case .failure(let err):
 					print(err)
@@ -25,9 +24,9 @@ final class BillViewModel: ObservableObject {
 		}
 	}
 
-	func likeBill(billId: String) {
+	func likeBill(matterId: String) {
 		let createLike = CreateLikeMutation(
-			input: CreateLikeInput(billId: billId)
+			input: CreateLikeInput(matterId: matterId)
 		)
 
 		Network.shared.apollo.perform(mutation: createLike) { result in
@@ -38,13 +37,13 @@ final class BillViewModel: ObservableObject {
 						return
 					}
 
-					let updatedBill = response.createLike.bill.fragments.displayableBill
-					self.bills = self.bills.map { bill in
-						if bill.id == updatedBill.id {
-							return Bill(updatedBill)
+					let updatedBill = response.createLike.matter.fragments.displayableMatter
+					self.matters = self.matters.map { matter in
+						if matter.id == updatedBill.id {
+							return Matter(updatedBill)
 						}
 						
-						return bill
+						return matter
 					}
 				case.failure(let err):
 					print(err)
@@ -52,10 +51,10 @@ final class BillViewModel: ObservableObject {
 		}
 	}
 	
-	func process(data: [BillsQuery.Data.Bill]) -> [Bill] {
-		return Bills(
-			data.map { $0.fragments.displayableBill }
-		).bills
+	func process(data: [MattersQuery.Data.Matter]) -> [Matter] {
+		return Matters(
+			data.map { $0.fragments.displayableMatter }
+		).matters
 	}
 	
 	init() {
