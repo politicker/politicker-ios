@@ -18,7 +18,7 @@
 		8428D2EC277AB81C004E546A /* GetMatters.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 8428D2EB277AB81C004E546A /* GetMatters.graphql */; };
 		8428D2EE277AB85D004E546A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2ED277AB85D004E546A /* API.swift */; };
 		8428D2F0277AB8B1004E546A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2EF277AB8B1004E546A /* Network.swift */; };
-		8428D2F4277ABBAA004E546A /* BillsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2F3277ABBAA004E546A /* BillsViewModel.swift */; };
+		8428D2F4277ABBAA004E546A /* MattersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2F3277ABBAA004E546A /* MattersViewModel.swift */; };
 		84FCF493277F85210024C2C5 /* CreateLike.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 84FCF492277F85210024C2C5 /* CreateLike.graphql */; };
 		84FCF495277FB2F00024C2C5 /* DisplayableMatterFragment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 84FCF494277FB2F00024C2C5 /* DisplayableMatterFragment.graphql */; };
 		84FCF4972780FCC70024C2C5 /* MatterStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCF4962780FCC70024C2C5 /* MatterStatusView.swift */; };
@@ -35,7 +35,7 @@
 		8428D2EB277AB81C004E546A /* GetMatters.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetMatters.graphql; sourceTree = "<group>"; };
 		8428D2ED277AB85D004E546A /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		8428D2EF277AB8B1004E546A /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		8428D2F3277ABBAA004E546A /* BillsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsViewModel.swift; sourceTree = "<group>"; };
+		8428D2F3277ABBAA004E546A /* MattersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattersViewModel.swift; sourceTree = "<group>"; };
 		84FCF492277F85210024C2C5 /* CreateLike.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CreateLike.graphql; sourceTree = "<group>"; };
 		84FCF494277FB2F00024C2C5 /* DisplayableMatterFragment.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DisplayableMatterFragment.graphql; sourceTree = "<group>"; };
 		84FCF4962780FCC70024C2C5 /* MatterStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatterStatusView.swift; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		8428D2F2277ABB96004E546A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				8428D2F3277ABBAA004E546A /* BillsViewModel.swift */,
+				8428D2F3277ABBAA004E546A /* MattersViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -227,7 +227,7 @@
 				8428D2E1277A520F004E546A /* Matter.swift in Sources */,
 				84FCF4972780FCC70024C2C5 /* MatterStatusView.swift in Sources */,
 				8428D2CD277A354C004E546A /* MainView.swift in Sources */,
-				8428D2F4277ABBAA004E546A /* BillsViewModel.swift in Sources */,
+				8428D2F4277ABBAA004E546A /* MattersViewModel.swift in Sources */,
 				8428D2F0277AB8B1004E546A /* Network.swift in Sources */,
 				8428D2CB277A354C004E546A /* politickerApp.swift in Sources */,
 				8428D2EE277AB85D004E546A /* API.swift in Sources */,

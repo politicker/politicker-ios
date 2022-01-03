@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MatterListItem: View {
 	var matter: Matter
-	let onLikeBill: (String) -> Void
+	let onLike: (String) -> Void
 	
 	@State private var showingAlert = false
 	
@@ -39,7 +39,7 @@ struct MatterListItem: View {
 			HStack {
 				Spacer()
 				Button {
-					onLikeBill(matter.id)
+					onLike(matter.id)
 				} label: {
 					if matter.liked {
 						Image(systemName: "heart.fill")
@@ -56,11 +56,8 @@ struct MatterListItem: View {
 	}
 }
 
-struct BillListViews_Previews: PreviewProvider {    
+struct MatterListViews_Previews: PreviewProvider {
 	static var previews: some View {
-		//        BillListItem(bill: bill)
-		//        BillListView(title: "Bills", bills: bills)
-		//        BillListView(title: "No Bills", bills: Binding.constant([]))
 		Text("Fix these to work with graphql")
 	}
 }

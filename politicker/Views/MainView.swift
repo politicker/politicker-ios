@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct MainView: View {
-	@EnvironmentObject var billsViewModel: BillViewModel
+	@EnvironmentObject var mattersViewModel: MattersViewModel
 	
-	var likedBills: [Matter] {
+	var likedMatters: [Matter] {
 		get {
-			billsViewModel.matters.filter { $0.liked }
+			mattersViewModel.matters.filter { $0.liked }
 		}
 	}
 	
@@ -24,8 +24,8 @@ struct MainView: View {
 						.font(.bold(.largeTitle)())
 					Spacer()
 
-					List(billsViewModel.matters) { matter in
-						MatterListItem(matter: matter, onLikeBill: likeBill)
+					List(mattersViewModel.matters) { matter in
+						MatterListItem(matter: matter, onLike: handleLike)
 							.listRowSeparator(.visible, edges: .bottom)
 					}.listStyle(.plain).refreshable {
 						print("fetching more bills")
@@ -39,8 +39,8 @@ struct MainView: View {
 					Text("Liked")
 						.font(.bold(.largeTitle)())
 					Spacer()
-					List(likedBills) { bill in
-						MatterListItem(matter: bill, onLikeBill: likeBill)
+					List(likedMatters) { matter in
+						MatterListItem(matter: matter, onLike: handleLike)
 					}
 				}.tabItem {
 					Image(systemName: "heart")
@@ -57,16 +57,16 @@ struct MainView: View {
 
 // State modifiers
 extension MainView {
-	func likeBill(billId: String) {
-		billsViewModel.likeBill(matterId: billId)
+	func handleLike(matterId: String) {
+		mattersViewModel.createLike(matterId: matterId)
 	}
 }
 
 struct ContentView_Previews: PreviewProvider {
-	static private let billsViewModel = BillViewModel()
+	static private let mattersViewModel = MattersViewModel()
 	
 	static var previews: some View {
 		MainView()
-			.environmentObject(billsViewModel)
+			.environmentObject(mattersViewModel)
 	}
 }

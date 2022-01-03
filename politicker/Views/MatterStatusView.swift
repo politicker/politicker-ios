@@ -1,5 +1,5 @@
 //
-//  BillStatusView.swift
+//  MatterStatusView.swift
 //  politicker
 //
 //  Created by Harrison Borges on 1/1/22.
@@ -19,7 +19,7 @@ struct MatterStatusView: View {
 	}
 }
 
-struct BillStatusView_Previews: PreviewProvider {
+struct MatterStatusView_Previews: PreviewProvider {
 	static var previews: some View {
 		MatterStatusView(status: "Passed")
 	}

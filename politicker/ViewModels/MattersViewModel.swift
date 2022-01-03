@@ -4,11 +4,9 @@
 //
 //  Created by Harrison Borges on 12/27/21.
 //
-
-import Foundation
 import Combine
 
-final class BillViewModel: ObservableObject {
+final class MattersViewModel: ObservableObject {
 	@Published var matters: [Matter] = []
 	
 	func fetch() {
@@ -24,7 +22,7 @@ final class BillViewModel: ObservableObject {
 		}
 	}
 
-	func likeBill(matterId: String) {
+	func createLike(matterId: String) {
 		let createLike = CreateLikeMutation(
 			input: CreateLikeInput(matterId: matterId)
 		)
@@ -37,10 +35,10 @@ final class BillViewModel: ObservableObject {
 						return
 					}
 
-					let updatedBill = response.createLike.matter.fragments.displayableMatter
+					let updatedMatter = response.createLike.matter.fragments.displayableMatter
 					self.matters = self.matters.map { matter in
-						if matter.id == updatedBill.id {
-							return Matter(updatedBill)
+						if matter.id == updatedMatter.id {
+							return Matter(updatedMatter)
 						}
 						
 						return matter
