@@ -17,40 +17,36 @@ struct MatterListItem: View {
 		VStack(alignment: .leading) {
 			HStack {
 				Text(matter.committeeName)
-					.font(.title3)
+					.font(.title2)
 				Spacer()
 				Text("3 days ago")
 					.font(.caption)
-			}
-
-			HStack {
-				Text(matter.shortDescription)
-				Spacer()
-			}.font(.subheadline).foregroundColor(Color.secondary)
+			}.padding(.bottom, 5.0)
+			
+			Text(matter.shortDescription)
+				.minimumScaleFactor(0.5)
+			
+//			Spacer()
+//
+//			Text(matter.longDescription)
+//				.font(.body)
 			
 			HStack {
-				Spacer()
-				MatterStatusView(status: "Passed")
-			}
-			
-			Text(matter.longDescription)
-				.font(.body)
-			
-			HStack {
-				Spacer()
-				Button {
-					onLike(matter.id)
-				} label: {
-					if matter.liked {
-						Image(systemName: "heart.fill")
-							.foregroundColor(Color.red)
-							.font(.system(size: 25, weight: .regular))
-					} else {
-						Image(systemName: "heart")
-							.foregroundColor(.black)
-							.font(.system(size: 25, weight: .light))
-					}
-				}
+				MatterStatusView(status: matter.status)
+//				Spacer()
+//				Button {
+//					onLike(matter.id)
+//				} label: {
+//					if matter.liked {
+//						Image(systemName: "heart.fill")
+//							.foregroundColor(Color.red)
+//							.font(.system(size: 25, weight: .regular))
+//					} else {
+//						Image(systemName: "heart")
+//							.foregroundColor(.black)
+//							.font(.system(size: 25, weight: .light))
+//					}
+//				}
 			}
 		}
 	}

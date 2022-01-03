@@ -23,12 +23,11 @@ struct MainView: View {
 					Text("Bills")
 						.font(.bold(.largeTitle)())
 					Spacer()
-
 					List(mattersViewModel.matters) { matter in
 						MatterListItem(matter: matter, onLike: handleLike)
 							.listRowSeparator(.visible, edges: .bottom)
 					}.listStyle(.plain).refreshable {
-						print("fetching more bills")
+						mattersViewModel.fetch()
 					}
 				}.tabItem {
 					Image(systemName: "house")
