@@ -25,7 +25,7 @@ struct MainView: View {
 					Spacer()
 
 					List(billsViewModel.matters) { matter in
-						BillListItem(matter: matter, onLikeBill: likeBill)
+						MatterListItem(matter: matter, onLikeBill: likeBill)
 							.listRowSeparator(.visible, edges: .bottom)
 					}.listStyle(.plain).refreshable {
 						print("fetching more bills")
@@ -40,7 +40,7 @@ struct MainView: View {
 						.font(.bold(.largeTitle)())
 					Spacer()
 					List(likedBills) { bill in
-						BillListItem(matter: bill, onLikeBill: likeBill)
+						MatterListItem(matter: bill, onLikeBill: likeBill)
 					}
 				}.tabItem {
 					Image(systemName: "heart")

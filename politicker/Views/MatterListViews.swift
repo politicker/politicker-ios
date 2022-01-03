@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BillListItem: View {
+struct MatterListItem: View {
 	var matter: Matter
 	let onLikeBill: (String) -> Void
 	
@@ -30,7 +30,7 @@ struct BillListItem: View {
 			
 			HStack {
 				Spacer()
-				BillStatusView(status: "Passed")
+				MatterStatusView(status: "Passed")
 			}
 			
 			Text(matter.longDescription)

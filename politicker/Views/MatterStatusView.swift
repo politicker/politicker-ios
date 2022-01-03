@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BillStatusView: View {
+struct MatterStatusView: View {
 	var status: String
 	
 	var body: some View {
@@ -21,6 +21,6 @@ struct BillStatusView: View {
 
 struct BillStatusView_Previews: PreviewProvider {
 	static var previews: some View {
-		BillStatusView(status: "Passed")
+		MatterStatusView(status: "Passed")
 	}
 }
