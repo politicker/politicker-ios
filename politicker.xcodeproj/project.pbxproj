@@ -19,6 +19,7 @@
 		8428D2EE277AB85D004E546A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2ED277AB85D004E546A /* API.swift */; };
 		8428D2F0277AB8B1004E546A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2EF277AB8B1004E546A /* Network.swift */; };
 		8428D2F4277ABBAA004E546A /* MattersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2F3277ABBAA004E546A /* MattersViewModel.swift */; };
+		846C6DDD2782A47F00B8D7AE /* MatterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846C6DDC2782A47F00B8D7AE /* MatterDetailView.swift */; };
 		84FCF493277F85210024C2C5 /* CreateLike.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 84FCF492277F85210024C2C5 /* CreateLike.graphql */; };
 		84FCF495277FB2F00024C2C5 /* DisplayableMatterFragment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 84FCF494277FB2F00024C2C5 /* DisplayableMatterFragment.graphql */; };
 		84FCF4972780FCC70024C2C5 /* MatterStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCF4962780FCC70024C2C5 /* MatterStatusView.swift */; };
@@ -36,6 +37,7 @@
 		8428D2ED277AB85D004E546A /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		8428D2EF277AB8B1004E546A /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		8428D2F3277ABBAA004E546A /* MattersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattersViewModel.swift; sourceTree = "<group>"; };
+		846C6DDC2782A47F00B8D7AE /* MatterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatterDetailView.swift; sourceTree = "<group>"; };
 		84FCF492277F85210024C2C5 /* CreateLike.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CreateLike.graphql; sourceTree = "<group>"; };
 		84FCF494277FB2F00024C2C5 /* DisplayableMatterFragment.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DisplayableMatterFragment.graphql; sourceTree = "<group>"; };
 		84FCF4962780FCC70024C2C5 /* MatterStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatterStatusView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				8428D2DD277A3CD8004E546A /* MatterListViews.swift */,
 				84FCF492277F85210024C2C5 /* CreateLike.graphql */,
 				84FCF4962780FCC70024C2C5 /* MatterStatusView.swift */,
+				846C6DDC2782A47F00B8D7AE /* MatterDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				8428D2F0277AB8B1004E546A /* Network.swift in Sources */,
 				8428D2CB277A354C004E546A /* politickerApp.swift in Sources */,
 				8428D2EE277AB85D004E546A /* API.swift in Sources */,
+				846C6DDD2782A47F00B8D7AE /* MatterDetailView.swift in Sources */,
 				8428D2DE277A3CD8004E546A /* MatterListViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

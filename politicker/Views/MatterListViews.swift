@@ -16,8 +16,13 @@ struct MatterListItem: View {
 	var body: some View {
 		VStack(alignment: .leading) {
 			HStack {
-				Text(matter.committeeName)
-					.font(.title2)
+				VStack(alignment: .leading) {
+					Text(matter.committeeName)
+						.font(.title2)
+					Text(matter.fileNumber)
+						.font(.subheadline)
+						.foregroundColor(.secondary)
+				}.fixedSize(horizontal: false, vertical: true)
 				Spacer()
 				Text("3 days ago")
 					.font(.caption)
@@ -26,28 +31,7 @@ struct MatterListItem: View {
 			Text(matter.shortDescription)
 				.minimumScaleFactor(0.5)
 			
-//			Spacer()
-//
-//			Text(matter.longDescription)
-//				.font(.body)
-			
-			HStack {
-				MatterStatusView(status: matter.status)
-//				Spacer()
-//				Button {
-//					onLike(matter.id)
-//				} label: {
-//					if matter.liked {
-//						Image(systemName: "heart.fill")
-//							.foregroundColor(Color.red)
-//							.font(.system(size: 25, weight: .regular))
-//					} else {
-//						Image(systemName: "heart")
-//							.foregroundColor(.black)
-//							.font(.system(size: 25, weight: .light))
-//					}
-//				}
-			}
+			MatterStatusView(status: matter.status)
 		}
 	}
 }

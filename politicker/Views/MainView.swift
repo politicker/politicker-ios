@@ -17,40 +17,27 @@ struct MainView: View {
 	}
 	
 	var body: some View {
-		VStack {
-			TabView {
-				VStack(alignment: .leading) {
-					Text("Bills")
-						.font(.bold(.largeTitle)())
-					Spacer()
-					List(mattersViewModel.matters) { matter in
+		TabView {
+			NavigationView {
+				List(mattersViewModel.matters) { matter in
+					NavigationLink {
+						MatterDetailView(matter: matter)
+					} label: {
 						MatterListItem(matter: matter, onLike: handleLike)
 							.listRowSeparator(.visible, edges: .bottom)
-					}.listStyle(.plain).refreshable {
-						mattersViewModel.fetch()
 					}
-				}.tabItem {
-					Image(systemName: "house")
-				}.tag(1)
-					.padding(.leading, 10.0)
-					.padding(.trailing, 10.0)
-				VStack(alignment: .leading) {
-					Text("Liked")
-						.font(.bold(.largeTitle)())
-					Spacer()
-					List(likedMatters) { matter in
-						MatterListItem(matter: matter, onLike: handleLike)
-					}
-				}.tabItem {
-					Image(systemName: "heart")
-				}.tag(2)
-					.padding(.leading, 10.0)
-					.padding(.trailing, 10.0)
-				Text("Tab Content 3").tabItem {
-					Image(systemName: "gear")
-				}.tag(3)
-			}.accentColor(.black)
-		}
+				}.listStyle(.plain).refreshable {
+					mattersViewModel.fetch()
+				}.navigationTitle("Bills")
+			}.tabItem {
+				Image(systemName: "house")
+			}.tag(1)
+				.padding(.leading, 10.0)
+				.padding(.trailing, 10.0)
+			Text("Settings").tabItem {
+				Image(systemName: "gear")
+			}.tag(2)
+		}.accentColor(.black)
 	}
 }
 
