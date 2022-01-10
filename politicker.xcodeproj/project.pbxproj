@@ -139,7 +139,6 @@
 		8428D2C9277A354C004E546A /* politicker */ = {
 			isa = PBXGroup;
 			children = (
-				8428D2DF277A3F5B004E546A /* Models */,
 				8428D2CA277A354C004E546A /* politickerApp.swift */,
 				8428D2CE277A354D004E546A /* Assets.xcassets */,
 				8428D2D0277A354D004E546A /* Preview Content */,
@@ -156,13 +155,6 @@
 				8428D2D1277A354D004E546A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		8428D2DF277A3F5B004E546A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
