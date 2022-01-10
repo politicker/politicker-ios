@@ -35,6 +35,8 @@ struct MatterDetailView: View {
 			
 			Text(matter.longDescription)
 		}.padding()
+		Spacer()
+		
 	}
 }
 
