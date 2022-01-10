@@ -5,6 +5,8 @@
 //  Created by Harrison Borges on 12/27/21.
 //
 
+import Foundation
+
 struct Matters: Decodable {
 	var matters: [Matter]
 	
@@ -24,13 +26,9 @@ struct Matter: Identifiable, Decodable, Hashable {
 	var typeName: String
 	var status: String
 	var committeeName: String
-	var lastModifiedAt: String
-	var introducedAt: String
-	var passedAt: String
-	var enactedAt: String
-	var agendaDate: String
+	var postDate: Date
+	var introducedAt: Date
 	var enactmentNumber: String
-	var updatedAt: String
 	var likeCount: Int
 	var liked: Bool
 	
@@ -43,19 +41,24 @@ struct Matter: Identifiable, Decodable, Hashable {
 		self.typeName = matter.typeName
 		self.status = matter.status.rawValue
 		self.committeeName = matter.committeeName
-		self.lastModifiedAt = matter.lastModifiedAt
-		self.introducedAt = matter.introducedAt
-		self.passedAt = matter.passedAt
-		self.enactedAt = matter.enactedAt
-		self.agendaDate = matter.agendaDate
 		self.enactmentNumber = matter.enactmentNumber
-		self.updatedAt = matter.updatedAt
 		self.likeCount = matter.likeCount
 		self.liked = matter.liked
+
+		let formatter = DateFormatter()
+		formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+		
+		self.postDate = formatter.date(from: matter.postDate)!
+		
+		if let introducedAt = formatter.date(from: matter.introducedAt) {
+			self.introducedAt = introducedAt
+		} else {
+			self.introducedAt = Date()
+		}
 	}
 }
 
-// Hashable & Equatable conforms
+// MARK: Hashable & Equatable conforms
 extension Matter {
 	static func == (lhs: Matter, rhs: Matter) -> Bool {
 		return lhs.id < rhs.id
