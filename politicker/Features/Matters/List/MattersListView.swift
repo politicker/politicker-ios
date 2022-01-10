@@ -22,11 +22,11 @@ struct MattersListView: View {
                     .listStyle(.plain).refreshable {
                         data.fetchMatters()
                     }
+                    .navigationTitle("Matters")
+                    .onAppear {
+                        data.fetchMatters()
+                    }
         }
-                .navigationTitle("Matters")
-                .onAppear {
-                    data.fetchMatters()
-                }
     }
 }
 
