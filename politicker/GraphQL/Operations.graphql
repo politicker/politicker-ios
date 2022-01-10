@@ -37,6 +37,4 @@ fragment MatterFull on Matter {
 	enactmentNumber
 	updatedAt
 	postDate
-	liked
-	likeCount
 }
