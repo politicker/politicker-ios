@@ -13,6 +13,23 @@ struct MatterDetailView: View {
         query.data?.matter.fragments.matterFull
     }
 
+    var shortDate: String {
+        let parser = DateFormatter()
+        parser.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+
+        let fmt = DateFormatter()
+        fmt.dateStyle = .short
+
+        if let matter = matter,
+           let introduced = matter.introducedAt {
+            if let date = parser.date(from: introduced) {
+                return fmt.string(from: date)
+            }
+        }
+
+        return ""
+    }
+
     init(_ id: GraphQLID) {
         _query = StateObject(wrappedValue: SingleQuery(query: MatterQuery(id: id)))
     }
@@ -25,7 +42,7 @@ struct MatterDetailView: View {
             HStack {
                 Text(matter?.fileNumber ?? "----")
                 Spacer()
-                Text("Introduced: \(matter?.introducedAt ?? "----")")
+                Text("Introduced: \(shortDate)")
             }
                     .font(.subheadline)
                     .foregroundColor(.secondary)
@@ -33,7 +50,8 @@ struct MatterDetailView: View {
             Divider()
 
             Text(matter?.longDescription ?? "No description provided")
-        }.padding()
+        }
+                .padding()
         Spacer()
 
     }
