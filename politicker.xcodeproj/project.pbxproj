@@ -11,7 +11,7 @@
 		8428D2CD277A354C004E546A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2CC277A354C004E546A /* MainView.swift */; };
 		8428D2CF277A354D004E546A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8428D2CE277A354D004E546A /* Assets.xcassets */; };
 		8428D2D2277A354D004E546A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8428D2D1277A354D004E546A /* Preview Assets.xcassets */; };
-		8428D2DE277A3CD8004E546A /* MatterListViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2DD277A3CD8004E546A /* MatterListViews.swift */; };
+		8428D2DE277A3CD8004E546A /* MatterListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2DD277A3CD8004E546A /* MatterListItem.swift */; };
 		8428D2E1277A520F004E546A /* Matter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2E0277A520F004E546A /* Matter.swift */; };
 		8428D2E4277A77E2004E546A /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 8428D2E3277A77E2004E546A /* Apollo */; };
 		8428D2E6277A77E2004E546A /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = 8428D2E5277A77E2004E546A /* ApolloCodegenLib */; };
@@ -20,6 +20,7 @@
 		8428D2F0277AB8B1004E546A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2EF277AB8B1004E546A /* Network.swift */; };
 		8428D2F4277ABBAA004E546A /* MattersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2F3277ABBAA004E546A /* MattersViewModel.swift */; };
 		846C6DDD2782A47F00B8D7AE /* MatterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846C6DDC2782A47F00B8D7AE /* MatterDetailView.swift */; };
+		84EEAD72278BA2E300045F43 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEAD71278BA2E300045F43 /* DateExtensions.swift */; };
 		84FCF493277F85210024C2C5 /* CreateLike.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 84FCF492277F85210024C2C5 /* CreateLike.graphql */; };
 		84FCF495277FB2F00024C2C5 /* DisplayableMatterFragment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 84FCF494277FB2F00024C2C5 /* DisplayableMatterFragment.graphql */; };
 		84FCF4972780FCC70024C2C5 /* MatterStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCF4962780FCC70024C2C5 /* MatterStatusView.swift */; };
@@ -31,13 +32,14 @@
 		8428D2CC277A354C004E546A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8428D2CE277A354D004E546A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8428D2D1277A354D004E546A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8428D2DD277A3CD8004E546A /* MatterListViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatterListViews.swift; sourceTree = "<group>"; };
+		8428D2DD277A3CD8004E546A /* MatterListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatterListItem.swift; sourceTree = "<group>"; };
 		8428D2E0277A520F004E546A /* Matter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matter.swift; sourceTree = "<group>"; };
 		8428D2EB277AB81C004E546A /* GetMatters.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetMatters.graphql; sourceTree = "<group>"; };
 		8428D2ED277AB85D004E546A /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		8428D2EF277AB8B1004E546A /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		8428D2F3277ABBAA004E546A /* MattersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattersViewModel.swift; sourceTree = "<group>"; };
 		846C6DDC2782A47F00B8D7AE /* MatterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatterDetailView.swift; sourceTree = "<group>"; };
+		84EEAD71278BA2E300045F43 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		84FCF492277F85210024C2C5 /* CreateLike.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CreateLike.graphql; sourceTree = "<group>"; };
 		84FCF494277FB2F00024C2C5 /* DisplayableMatterFragment.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DisplayableMatterFragment.graphql; sourceTree = "<group>"; };
 		84FCF4962780FCC70024C2C5 /* MatterStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatterStatusView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				8428D2D0277A354D004E546A /* Preview Content */,
 				8428D2EF277AB8B1004E546A /* Network.swift */,
 				84FCF494277FB2F00024C2C5 /* DisplayableMatterFragment.graphql */,
+				84EEAD71278BA2E300045F43 /* DateExtensions.swift */,
 			);
 			path = politicker;
 			sourceTree = "<group>";
@@ -101,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				8428D2CC277A354C004E546A /* MainView.swift */,
-				8428D2DD277A3CD8004E546A /* MatterListViews.swift */,
+				8428D2DD277A3CD8004E546A /* MatterListItem.swift */,
 				84FCF492277F85210024C2C5 /* CreateLike.graphql */,
 				84FCF4962780FCC70024C2C5 /* MatterStatusView.swift */,
 				846C6DDC2782A47F00B8D7AE /* MatterDetailView.swift */,
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8428D2E1277A520F004E546A /* Matter.swift in Sources */,
+				84EEAD72278BA2E300045F43 /* DateExtensions.swift in Sources */,
 				84FCF4972780FCC70024C2C5 /* MatterStatusView.swift in Sources */,
 				8428D2CD277A354C004E546A /* MainView.swift in Sources */,
 				8428D2F4277ABBAA004E546A /* MattersViewModel.swift in Sources */,
@@ -235,7 +239,7 @@
 				8428D2CB277A354C004E546A /* politickerApp.swift in Sources */,
 				8428D2EE277AB85D004E546A /* API.swift in Sources */,
 				846C6DDD2782A47F00B8D7AE /* MatterDetailView.swift in Sources */,
-				8428D2DE277A3CD8004E546A /* MatterListViews.swift in Sources */,
+				8428D2DE277A3CD8004E546A /* MatterListItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
