@@ -24,7 +24,7 @@ struct MatterListItem: View {
 						.foregroundColor(.secondary)
 				}.fixedSize(horizontal: false, vertical: true)
 				Spacer()
-				Text("3 days ago")
+				Text(matter.postDate.timeAgoDisplay())
 					.font(.caption)
 			}.padding(.bottom, 5.0)
 			
