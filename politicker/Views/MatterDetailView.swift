@@ -9,6 +9,14 @@ import SwiftUI
 
 struct MatterDetailView: View {
 	var matter: Matter
+	var introducedAt: String {
+		get {
+			let formatter = DateFormatter()
+			formatter.dateStyle = .short
+			
+			return formatter.string(from: matter.introducedAt)
+		}
+	}
 	
 	var body: some View {
 		VStack(alignment: .leading) {
@@ -18,7 +26,7 @@ struct MatterDetailView: View {
 			HStack {
 				Text(matter.fileNumber)
 				Spacer()
-				Text("Introduced: \(matter.introducedAt)")
+				Text("Introduced: \(introducedAt)")
 			}
 			.font(.subheadline)
 			.foregroundColor(.secondary)
