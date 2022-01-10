@@ -1,5 +1,0 @@
-query Matters {
-  matters {
-    ...DisplayableMatter
-  }
-}

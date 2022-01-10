@@ -9,12 +9,9 @@ import SwiftUI
 
 @main
 struct politickerApp: App {
-	@StateObject var mattersViewModel = MattersViewModel()
-	
 	var body: some Scene {
 		WindowGroup {
-			MainView()
-				.environmentObject(mattersViewModel)
+			TabbarView()
 		}
 	}
 }

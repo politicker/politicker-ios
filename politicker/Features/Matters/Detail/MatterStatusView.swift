@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct MatterStatusView: View {
-	var status: String
+	var status: MatterStatus
 	
 	var color: Color {
-		switch status.lowercased() {
-			case "enacted", "committee", "approved", "adopted":
+		switch status {
+			case .enacted, .committee, .approved, .adopted:
 				return Color.green
-			case "disapproved", "failed", "withdrawn":
+			case .disapproved, .failed, .withdrawn:
 				return Color.red
-			case "special", "local", "hearing", "filed", "general", "received":
+			case .special, .local, .hearing, .filed, .general, .received:
 				return Color.yellow
 			default:
 				return Color.clear
@@ -24,7 +24,7 @@ struct MatterStatusView: View {
 	}
 	
 	var body: some View {
-		Text(status.capitalized)
+		Text(status.rawValue.capitalized)
 			.padding(2)
 			.background(color)
 			.cornerRadius(5)
@@ -34,6 +34,6 @@ struct MatterStatusView: View {
 
 struct MatterStatusView_Previews: PreviewProvider {
 	static var previews: some View {
-		MatterStatusView(status: "enacted")
+		MatterStatusView(status: .enacted)
 	}
 }

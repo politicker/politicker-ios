@@ -7,42 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B7150DBDFC3BE9E0DC4AEAD /* MattersListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B715BE30F10783AF77A79E3 /* MattersListRowView.swift */; };
+		7B715268571BE309BA37F254 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B715560159A00C533CF2512 /* TabbarView.swift */; };
+		7B71555D1F29486BD1FF2F2B /* Operations.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7B715A0781A9280D80F07A6F /* Operations.graphql */; };
+		7B715649003A59E8261DE76B /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7152BF4C4C442B8BF208B8 /* DateExtensions.swift */; };
+		7B715A0EBB1FAEC5D62E5E3E /* MatterStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B715DE2CB667697F3E2F8B7 /* MatterStatusView.swift */; };
+		7B715B551BC2DEB41324B0F5 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B715B853D1F728715B7ADEC /* API.swift */; };
+		7B715D8CC9AB2BC5C3CB75B2 /* MattersDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7154557D2310958AC9D238 /* MattersDetailView.swift */; };
+		7B715DB7A06F7A5EE6F8F922 /* MattersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7151B8ED6378B548E9F1F9 /* MattersListViewModel.swift */; };
+		7B715F0077BFC5E026704FEC /* MattersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B715A3D18213C881864D67D /* MattersListView.swift */; };
+		7B715F319FCE586DF5AF0E9E /* SingleQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B715747B41B6BE4090F18C1 /* SingleQuery.swift */; };
+		7B715F6E6CFC1A3CC6338531 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B715785574271E573ED007A /* Network.swift */; };
 		8428D2CB277A354C004E546A /* politickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2CA277A354C004E546A /* politickerApp.swift */; };
-		8428D2CD277A354C004E546A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2CC277A354C004E546A /* MainView.swift */; };
 		8428D2CF277A354D004E546A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8428D2CE277A354D004E546A /* Assets.xcassets */; };
 		8428D2D2277A354D004E546A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8428D2D1277A354D004E546A /* Preview Assets.xcassets */; };
-		8428D2DE277A3CD8004E546A /* MatterListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2DD277A3CD8004E546A /* MatterListItem.swift */; };
-		8428D2E1277A520F004E546A /* Matter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2E0277A520F004E546A /* Matter.swift */; };
 		8428D2E4277A77E2004E546A /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 8428D2E3277A77E2004E546A /* Apollo */; };
 		8428D2E6277A77E2004E546A /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = 8428D2E5277A77E2004E546A /* ApolloCodegenLib */; };
-		8428D2EC277AB81C004E546A /* GetMatters.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 8428D2EB277AB81C004E546A /* GetMatters.graphql */; };
-		8428D2EE277AB85D004E546A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2ED277AB85D004E546A /* API.swift */; };
-		8428D2F0277AB8B1004E546A /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2EF277AB8B1004E546A /* Network.swift */; };
-		8428D2F4277ABBAA004E546A /* MattersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2F3277ABBAA004E546A /* MattersViewModel.swift */; };
-		846C6DDD2782A47F00B8D7AE /* MatterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846C6DDC2782A47F00B8D7AE /* MatterDetailView.swift */; };
-		84EEAD72278BA2E300045F43 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEAD71278BA2E300045F43 /* DateExtensions.swift */; };
-		84FCF493277F85210024C2C5 /* CreateLike.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 84FCF492277F85210024C2C5 /* CreateLike.graphql */; };
-		84FCF495277FB2F00024C2C5 /* DisplayableMatterFragment.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 84FCF494277FB2F00024C2C5 /* DisplayableMatterFragment.graphql */; };
-		84FCF4972780FCC70024C2C5 /* MatterStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FCF4962780FCC70024C2C5 /* MatterStatusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B7151B8ED6378B548E9F1F9 /* MattersListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MattersListViewModel.swift; sourceTree = "<group>"; };
+		7B7152BF4C4C442B8BF208B8 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		7B7154557D2310958AC9D238 /* MattersDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MattersDetailView.swift; sourceTree = "<group>"; };
+		7B715560159A00C533CF2512 /* TabbarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
+		7B715747B41B6BE4090F18C1 /* SingleQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleQuery.swift; sourceTree = "<group>"; };
+		7B715785574271E573ED007A /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		7B715A0781A9280D80F07A6F /* Operations.graphql */ = {isa = PBXFileReference; lastKnownFileType = file.graphql; path = Operations.graphql; sourceTree = "<group>"; };
+		7B715A3D18213C881864D67D /* MattersListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MattersListView.swift; sourceTree = "<group>"; };
+		7B715B853D1F728715B7ADEC /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		7B715BE30F10783AF77A79E3 /* MattersListRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MattersListRowView.swift; sourceTree = "<group>"; };
+		7B715DE2CB667697F3E2F8B7 /* MatterStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatterStatusView.swift; sourceTree = "<group>"; };
 		8428D2C7277A354C004E546A /* politicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = politicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8428D2CA277A354C004E546A /* politickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = politickerApp.swift; sourceTree = "<group>"; };
-		8428D2CC277A354C004E546A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		8428D2CE277A354D004E546A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8428D2D1277A354D004E546A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8428D2DD277A3CD8004E546A /* MatterListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatterListItem.swift; sourceTree = "<group>"; };
-		8428D2E0277A520F004E546A /* Matter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matter.swift; sourceTree = "<group>"; };
-		8428D2EB277AB81C004E546A /* GetMatters.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = GetMatters.graphql; sourceTree = "<group>"; };
-		8428D2ED277AB85D004E546A /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		8428D2EF277AB8B1004E546A /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		8428D2F3277ABBAA004E546A /* MattersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MattersViewModel.swift; sourceTree = "<group>"; };
-		846C6DDC2782A47F00B8D7AE /* MatterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatterDetailView.swift; sourceTree = "<group>"; };
-		84EEAD71278BA2E300045F43 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
-		84FCF492277F85210024C2C5 /* CreateLike.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CreateLike.graphql; sourceTree = "<group>"; };
-		84FCF494277FB2F00024C2C5 /* DisplayableMatterFragment.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = DisplayableMatterFragment.graphql; sourceTree = "<group>"; };
-		84FCF4962780FCC70024C2C5 /* MatterStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatterStatusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +56,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B71516A3A5D3C496CFB670A /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				7B715B853D1F728715B7ADEC /* API.swift */,
+				7B715785574271E573ED007A /* Network.swift */,
+				7B715A0781A9280D80F07A6F /* Operations.graphql */,
+				7B715747B41B6BE4090F18C1 /* SingleQuery.swift */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		7B7155F254F6E239A89E96A5 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				7B7154557D2310958AC9D238 /* MattersDetailView.swift */,
+				7B715DE2CB667697F3E2F8B7 /* MatterStatusView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		7B7156B573D274113824000F /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				7B715560159A00C533CF2512 /* TabbarView.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		7B7158D2B79E46F65264F49F /* List */ = {
+			isa = PBXGroup;
+			children = (
+				7B715A3D18213C881864D67D /* MattersListView.swift */,
+				7B715BE30F10783AF77A79E3 /* MattersListRowView.swift */,
+				7B7151B8ED6378B548E9F1F9 /* MattersListViewModel.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		7B715951270DC303BE2B9668 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7B7152BF4C4C442B8BF208B8 /* DateExtensions.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		7B715B6DB8555E2744E15AB6 /* Matters */ = {
+			isa = PBXGroup;
+			children = (
+				7B7158D2B79E46F65264F49F /* List */,
+				7B7155F254F6E239A89E96A5 /* Detail */,
+			);
+			path = Matters;
+			sourceTree = "<group>";
+		};
+		7B715EB081168C7E5DE145B3 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				7B715B6DB8555E2744E15AB6 /* Matters */,
+				7B7156B573D274113824000F /* Tabbar */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
 		8428D2BE277A354C004E546A = {
 			isa = PBXGroup;
 			children = (
@@ -77,17 +139,13 @@
 		8428D2C9277A354C004E546A /* politicker */ = {
 			isa = PBXGroup;
 			children = (
-				8428D2F2277ABB96004E546A /* ViewModels */,
-				8428D2ED277AB85D004E546A /* API.swift */,
 				8428D2DF277A3F5B004E546A /* Models */,
-				8428D2DC277A3647004E546A /* Views */,
 				8428D2CA277A354C004E546A /* politickerApp.swift */,
-				8428D2EB277AB81C004E546A /* GetMatters.graphql */,
 				8428D2CE277A354D004E546A /* Assets.xcassets */,
 				8428D2D0277A354D004E546A /* Preview Content */,
-				8428D2EF277AB8B1004E546A /* Network.swift */,
-				84FCF494277FB2F00024C2C5 /* DisplayableMatterFragment.graphql */,
-				84EEAD71278BA2E300045F43 /* DateExtensions.swift */,
+				7B715EB081168C7E5DE145B3 /* Features */,
+				7B71516A3A5D3C496CFB670A /* GraphQL */,
+				7B715951270DC303BE2B9668 /* Shared */,
 			);
 			path = politicker;
 			sourceTree = "<group>";
@@ -100,32 +158,11 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8428D2DC277A3647004E546A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				8428D2CC277A354C004E546A /* MainView.swift */,
-				8428D2DD277A3CD8004E546A /* MatterListItem.swift */,
-				84FCF492277F85210024C2C5 /* CreateLike.graphql */,
-				84FCF4962780FCC70024C2C5 /* MatterStatusView.swift */,
-				846C6DDC2782A47F00B8D7AE /* MatterDetailView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		8428D2DF277A3F5B004E546A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8428D2E0277A520F004E546A /* Matter.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		8428D2F2277ABB96004E546A /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				8428D2F3277ABBAA004E546A /* MattersViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,11 +231,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84FCF493277F85210024C2C5 /* CreateLike.graphql in Resources */,
 				8428D2D2277A354D004E546A /* Preview Assets.xcassets in Resources */,
-				8428D2EC277AB81C004E546A /* GetMatters.graphql in Resources */,
-				84FCF495277FB2F00024C2C5 /* DisplayableMatterFragment.graphql in Resources */,
 				8428D2CF277A354D004E546A /* Assets.xcassets in Resources */,
+				7B71555D1F29486BD1FF2F2B /* Operations.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +256,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"../../politicker-backend/api/graphql/schema.graphql\" API.swift\n\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://apollo-fullstack-tutorial.herokuapp.com/\"\n\n";
+			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"../../politicker-backend/api/graphql/schema.graphql\" ./Graphql/API.swift\n\n#\"${SCRIPT_PATH}\"/run-bundled-codegen.sh schema:download --endpoint=\"https://apollo-fullstack-tutorial.herokuapp.com/\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -230,16 +265,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8428D2E1277A520F004E546A /* Matter.swift in Sources */,
-				84EEAD72278BA2E300045F43 /* DateExtensions.swift in Sources */,
-				84FCF4972780FCC70024C2C5 /* MatterStatusView.swift in Sources */,
-				8428D2CD277A354C004E546A /* MainView.swift in Sources */,
-				8428D2F4277ABBAA004E546A /* MattersViewModel.swift in Sources */,
-				8428D2F0277AB8B1004E546A /* Network.swift in Sources */,
 				8428D2CB277A354C004E546A /* politickerApp.swift in Sources */,
-				8428D2EE277AB85D004E546A /* API.swift in Sources */,
-				846C6DDD2782A47F00B8D7AE /* MatterDetailView.swift in Sources */,
-				8428D2DE277A3CD8004E546A /* MatterListItem.swift in Sources */,
+				7B715D8CC9AB2BC5C3CB75B2 /* MattersDetailView.swift in Sources */,
+				7B715F0077BFC5E026704FEC /* MattersListView.swift in Sources */,
+				7B7150DBDFC3BE9E0DC4AEAD /* MattersListRowView.swift in Sources */,
+				7B715DB7A06F7A5EE6F8F922 /* MattersListViewModel.swift in Sources */,
+				7B715B551BC2DEB41324B0F5 /* API.swift in Sources */,
+				7B715649003A59E8261DE76B /* DateExtensions.swift in Sources */,
+				7B715F6E6CFC1A3CC6338531 /* Network.swift in Sources */,
+				7B715F319FCE586DF5AF0E9E /* SingleQuery.swift in Sources */,
+				7B715268571BE309BA37F254 /* TabbarView.swift in Sources */,
+				7B715A0EBB1FAEC5D62E5E3E /* MatterStatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,7 +404,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"politicker/Preview Content\"";
 				DEVELOPMENT_TEAM = CHZPTSK255;
 				ENABLE_PREVIEWS = YES;
@@ -384,7 +420,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = politicker.politicker;
+				PRODUCT_BUNDLE_IDENTIFIER = politicker.info;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -398,7 +434,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"politicker/Preview Content\"";
 				DEVELOPMENT_TEAM = CHZPTSK255;
 				ENABLE_PREVIEWS = YES;
@@ -414,7 +450,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = politicker.politicker;
+				PRODUCT_BUNDLE_IDENTIFIER = politicker.info;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -1,7 +1,0 @@
-mutation CreateLike($input: CreateLikeInput!) {
-    createLike(input: $input) {
-        matter {
-            ...DisplayableMatter
-        }
-    }
-}

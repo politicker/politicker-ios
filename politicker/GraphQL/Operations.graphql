@@ -1,0 +1,42 @@
+query Matters {
+  matters {
+    ...MatterShort
+  }
+}
+
+query Matter($id: ID!) {
+    matter(id: $id) {
+        ...MatterFull
+    }
+}
+
+
+fragment MatterShort on Matter {
+    id
+    shortDescription
+    committeeName
+    fileNumber
+    postDate
+    status
+}
+
+fragment MatterFull on Matter {
+	id
+	shortDescription
+	longDescription
+	billWould
+	fileNumber
+	typeName
+	status
+	committeeName
+	lastModifiedAt
+	introducedAt
+	passedAt
+	enactedAt
+	agendaDate
+	enactmentNumber
+	updatedAt
+	postDate
+	liked
+	likeCount
+}
