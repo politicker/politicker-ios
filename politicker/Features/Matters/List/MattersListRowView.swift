@@ -25,7 +25,7 @@ struct MattersListRowView: View {
                 VStack(alignment: .leading) {
                     Text(matter.committeeName)
                             .font(.title2)
-                    Text(matter.fileNumber)
+                    Text(matter.fileNumber ?? "")
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                 }.fixedSize(horizontal: false, vertical: true)
@@ -34,7 +34,7 @@ struct MattersListRowView: View {
                         .font(.caption)
             }.padding(.bottom, 5.0)
 
-            Text(matter.shortDescription)
+            Text(matter.shortDescription ?? "")
                     .minimumScaleFactor(0.5)
 
             MatterStatusView(status: matter.status)
