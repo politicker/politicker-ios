@@ -166,7 +166,7 @@ public final class MattersQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID, shortDescription: String, committeeName: String, fileNumber: String, postDate: String, status: MatterStatus) {
+      public init(id: GraphQLID, shortDescription: String? = nil, committeeName: String, fileNumber: String? = nil, postDate: String, status: MatterStatus) {
         self.init(unsafeResultMap: ["__typename": "Matter", "id": id, "shortDescription": shortDescription, "committeeName": committeeName, "fileNumber": fileNumber, "postDate": postDate, "status": status])
       }
 
@@ -282,8 +282,8 @@ public final class MatterQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID, shortDescription: String, longDescription: String, billWould: String, fileNumber: String, typeName: String, status: MatterStatus, committeeName: String, lastModifiedAt: String, introducedAt: String, passedAt: String, enactedAt: String, agendaDate: String, enactmentNumber: String, updatedAt: String, postDate: String, liked: Bool, likeCount: Int) {
-        self.init(unsafeResultMap: ["__typename": "Matter", "id": id, "shortDescription": shortDescription, "longDescription": longDescription, "billWould": billWould, "fileNumber": fileNumber, "typeName": typeName, "status": status, "committeeName": committeeName, "lastModifiedAt": lastModifiedAt, "introducedAt": introducedAt, "passedAt": passedAt, "enactedAt": enactedAt, "agendaDate": agendaDate, "enactmentNumber": enactmentNumber, "updatedAt": updatedAt, "postDate": postDate, "liked": liked, "likeCount": likeCount])
+      public init(id: GraphQLID, shortDescription: String? = nil, longDescription: String? = nil, billWould: String? = nil, fileNumber: String? = nil, typeName: String, status: MatterStatus, committeeName: String, lastModifiedAt: String? = nil, introducedAt: String? = nil, passedAt: String? = nil, enactedAt: String? = nil, agendaDate: String? = nil, enactmentNumber: String? = nil, updatedAt: String? = nil, postDate: String) {
+        self.init(unsafeResultMap: ["__typename": "Matter", "id": id, "shortDescription": shortDescription, "longDescription": longDescription, "billWould": billWould, "fileNumber": fileNumber, "typeName": typeName, "status": status, "committeeName": committeeName, "lastModifiedAt": lastModifiedAt, "introducedAt": introducedAt, "passedAt": passedAt, "enactedAt": enactedAt, "agendaDate": agendaDate, "enactmentNumber": enactmentNumber, "updatedAt": updatedAt, "postDate": postDate])
       }
 
       public var __typename: String {
@@ -345,9 +345,9 @@ public struct MatterShort: GraphQLFragment {
     return [
       GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
       GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
-      GraphQLField("shortDescription", type: .nonNull(.scalar(String.self))),
+      GraphQLField("shortDescription", type: .scalar(String.self)),
       GraphQLField("committeeName", type: .nonNull(.scalar(String.self))),
-      GraphQLField("fileNumber", type: .nonNull(.scalar(String.self))),
+      GraphQLField("fileNumber", type: .scalar(String.self)),
       GraphQLField("postDate", type: .nonNull(.scalar(String.self))),
       GraphQLField("status", type: .nonNull(.scalar(MatterStatus.self))),
     ]
@@ -359,7 +359,7 @@ public struct MatterShort: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(id: GraphQLID, shortDescription: String, committeeName: String, fileNumber: String, postDate: String, status: MatterStatus) {
+  public init(id: GraphQLID, shortDescription: String? = nil, committeeName: String, fileNumber: String? = nil, postDate: String, status: MatterStatus) {
     self.init(unsafeResultMap: ["__typename": "Matter", "id": id, "shortDescription": shortDescription, "committeeName": committeeName, "fileNumber": fileNumber, "postDate": postDate, "status": status])
   }
 
@@ -381,9 +381,9 @@ public struct MatterShort: GraphQLFragment {
     }
   }
 
-  public var shortDescription: String {
+  public var shortDescription: String? {
     get {
-      return resultMap["shortDescription"]! as! String
+      return resultMap["shortDescription"] as? String
     }
     set {
       resultMap.updateValue(newValue, forKey: "shortDescription")
@@ -399,9 +399,9 @@ public struct MatterShort: GraphQLFragment {
     }
   }
 
-  public var fileNumber: String {
+  public var fileNumber: String? {
     get {
-      return resultMap["fileNumber"]! as! String
+      return resultMap["fileNumber"] as? String
     }
     set {
       resultMap.updateValue(newValue, forKey: "fileNumber")
@@ -449,8 +449,6 @@ public struct MatterFull: GraphQLFragment {
       enactmentNumber
       updatedAt
       postDate
-      liked
-      likeCount
     }
     """
 
@@ -460,23 +458,21 @@ public struct MatterFull: GraphQLFragment {
     return [
       GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
       GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
-      GraphQLField("shortDescription", type: .nonNull(.scalar(String.self))),
-      GraphQLField("longDescription", type: .nonNull(.scalar(String.self))),
-      GraphQLField("billWould", type: .nonNull(.scalar(String.self))),
-      GraphQLField("fileNumber", type: .nonNull(.scalar(String.self))),
+      GraphQLField("shortDescription", type: .scalar(String.self)),
+      GraphQLField("longDescription", type: .scalar(String.self)),
+      GraphQLField("billWould", type: .scalar(String.self)),
+      GraphQLField("fileNumber", type: .scalar(String.self)),
       GraphQLField("typeName", type: .nonNull(.scalar(String.self))),
       GraphQLField("status", type: .nonNull(.scalar(MatterStatus.self))),
       GraphQLField("committeeName", type: .nonNull(.scalar(String.self))),
-      GraphQLField("lastModifiedAt", type: .nonNull(.scalar(String.self))),
-      GraphQLField("introducedAt", type: .nonNull(.scalar(String.self))),
-      GraphQLField("passedAt", type: .nonNull(.scalar(String.self))),
-      GraphQLField("enactedAt", type: .nonNull(.scalar(String.self))),
-      GraphQLField("agendaDate", type: .nonNull(.scalar(String.self))),
-      GraphQLField("enactmentNumber", type: .nonNull(.scalar(String.self))),
-      GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+      GraphQLField("lastModifiedAt", type: .scalar(String.self)),
+      GraphQLField("introducedAt", type: .scalar(String.self)),
+      GraphQLField("passedAt", type: .scalar(String.self)),
+      GraphQLField("enactedAt", type: .scalar(String.self)),
+      GraphQLField("agendaDate", type: .scalar(String.self)),
+      GraphQLField("enactmentNumber", type: .scalar(String.self)),
+      GraphQLField("updatedAt", type: .scalar(String.self)),
       GraphQLField("postDate", type: .nonNull(.scalar(String.self))),
-      GraphQLField("liked", type: .nonNull(.scalar(Bool.self))),
-      GraphQLField("likeCount", type: .nonNull(.scalar(Int.self))),
     ]
   }
 
@@ -486,8 +482,8 @@ public struct MatterFull: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(id: GraphQLID, shortDescription: String, longDescription: String, billWould: String, fileNumber: String, typeName: String, status: MatterStatus, committeeName: String, lastModifiedAt: String, introducedAt: String, passedAt: String, enactedAt: String, agendaDate: String, enactmentNumber: String, updatedAt: String, postDate: String, liked: Bool, likeCount: Int) {
-    self.init(unsafeResultMap: ["__typename": "Matter", "id": id, "shortDescription": shortDescription, "longDescription": longDescription, "billWould": billWould, "fileNumber": fileNumber, "typeName": typeName, "status": status, "committeeName": committeeName, "lastModifiedAt": lastModifiedAt, "introducedAt": introducedAt, "passedAt": passedAt, "enactedAt": enactedAt, "agendaDate": agendaDate, "enactmentNumber": enactmentNumber, "updatedAt": updatedAt, "postDate": postDate, "liked": liked, "likeCount": likeCount])
+  public init(id: GraphQLID, shortDescription: String? = nil, longDescription: String? = nil, billWould: String? = nil, fileNumber: String? = nil, typeName: String, status: MatterStatus, committeeName: String, lastModifiedAt: String? = nil, introducedAt: String? = nil, passedAt: String? = nil, enactedAt: String? = nil, agendaDate: String? = nil, enactmentNumber: String? = nil, updatedAt: String? = nil, postDate: String) {
+    self.init(unsafeResultMap: ["__typename": "Matter", "id": id, "shortDescription": shortDescription, "longDescription": longDescription, "billWould": billWould, "fileNumber": fileNumber, "typeName": typeName, "status": status, "committeeName": committeeName, "lastModifiedAt": lastModifiedAt, "introducedAt": introducedAt, "passedAt": passedAt, "enactedAt": enactedAt, "agendaDate": agendaDate, "enactmentNumber": enactmentNumber, "updatedAt": updatedAt, "postDate": postDate])
   }
 
   public var __typename: String {
@@ -508,36 +504,36 @@ public struct MatterFull: GraphQLFragment {
     }
   }
 
-  public var shortDescription: String {
+  public var shortDescription: String? {
     get {
-      return resultMap["shortDescription"]! as! String
+      return resultMap["shortDescription"] as? String
     }
     set {
       resultMap.updateValue(newValue, forKey: "shortDescription")
     }
   }
 
-  public var longDescription: String {
+  public var longDescription: String? {
     get {
-      return resultMap["longDescription"]! as! String
+      return resultMap["longDescription"] as? String
     }
     set {
       resultMap.updateValue(newValue, forKey: "longDescription")
     }
   }
 
-  public var billWould: String {
+  public var billWould: String? {
     get {
-      return resultMap["billWould"]! as! String
+      return resultMap["billWould"] as? String
     }
     set {
       resultMap.updateValue(newValue, forKey: "billWould")
     }
   }
 
-  public var fileNumber: String {
+  public var fileNumber: String? {
     get {
-      return resultMap["fileNumber"]! as! String
+      return resultMap["fileNumber"] as? String
     }
     set {
       resultMap.updateValue(newValue, forKey: "fileNumber")
@@ -571,63 +567,63 @@ public struct MatterFull: GraphQLFragment {
     }
   }
 
-  public var lastModifiedAt: String {
+  public var lastModifiedAt: String? {
     get {
-      return resultMap["lastModifiedAt"]! as! String
+      return resultMap["lastModifiedAt"] as? String
     }
     set {
       resultMap.updateValue(newValue, forKey: "lastModifiedAt")
     }
   }
 
-  public var introducedAt: String {
+  public var introducedAt: String? {
     get {
-      return resultMap["introducedAt"]! as! String
+      return resultMap["introducedAt"] as? String
     }
     set {
       resultMap.updateValue(newValue, forKey: "introducedAt")
     }
   }
 
-  public var passedAt: String {
+  public var passedAt: String? {
     get {
-      return resultMap["passedAt"]! as! String
+      return resultMap["passedAt"] as? String
     }
     set {
       resultMap.updateValue(newValue, forKey: "passedAt")
     }
   }
 
-  public var enactedAt: String {
+  public var enactedAt: String? {
     get {
-      return resultMap["enactedAt"]! as! String
+      return resultMap["enactedAt"] as? String
     }
     set {
       resultMap.updateValue(newValue, forKey: "enactedAt")
     }
   }
 
-  public var agendaDate: String {
+  public var agendaDate: String? {
     get {
-      return resultMap["agendaDate"]! as! String
+      return resultMap["agendaDate"] as? String
     }
     set {
       resultMap.updateValue(newValue, forKey: "agendaDate")
     }
   }
 
-  public var enactmentNumber: String {
+  public var enactmentNumber: String? {
     get {
-      return resultMap["enactmentNumber"]! as! String
+      return resultMap["enactmentNumber"] as? String
     }
     set {
       resultMap.updateValue(newValue, forKey: "enactmentNumber")
     }
   }
 
-  public var updatedAt: String {
+  public var updatedAt: String? {
     get {
-      return resultMap["updatedAt"]! as! String
+      return resultMap["updatedAt"] as? String
     }
     set {
       resultMap.updateValue(newValue, forKey: "updatedAt")
@@ -640,24 +636,6 @@ public struct MatterFull: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "postDate")
-    }
-  }
-
-  public var liked: Bool {
-    get {
-      return resultMap["liked"]! as! Bool
-    }
-    set {
-      resultMap.updateValue(newValue, forKey: "liked")
-    }
-  }
-
-  public var likeCount: Int {
-    get {
-      return resultMap["likeCount"]! as! Int
-    }
-    set {
-      resultMap.updateValue(newValue, forKey: "likeCount")
     }
   }
 }
