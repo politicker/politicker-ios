@@ -185,8 +185,8 @@ public final class MattersQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: GraphQLID, shortDescription: String, longDescription: String, billWould: String, fileNumber: String, typeName: String, status: MatterStatus, committeeName: String, lastModifiedAt: String, introducedAt: String, passedAt: String, enactedAt: String, agendaDate: String, enactmentNumber: String, updatedAt: String, liked: Bool, likeCount: Int) {
-        self.init(unsafeResultMap: ["__typename": "Matter", "id": id, "shortDescription": shortDescription, "longDescription": longDescription, "billWould": billWould, "fileNumber": fileNumber, "typeName": typeName, "status": status, "committeeName": committeeName, "lastModifiedAt": lastModifiedAt, "introducedAt": introducedAt, "passedAt": passedAt, "enactedAt": enactedAt, "agendaDate": agendaDate, "enactmentNumber": enactmentNumber, "updatedAt": updatedAt, "liked": liked, "likeCount": likeCount])
+      public init(id: GraphQLID, shortDescription: String, longDescription: String, billWould: String, fileNumber: String, typeName: String, status: MatterStatus, committeeName: String, lastModifiedAt: String, introducedAt: String, passedAt: String, enactedAt: String, agendaDate: String, enactmentNumber: String, updatedAt: String, postDate: String, liked: Bool, likeCount: Int) {
+        self.init(unsafeResultMap: ["__typename": "Matter", "id": id, "shortDescription": shortDescription, "longDescription": longDescription, "billWould": billWould, "fileNumber": fileNumber, "typeName": typeName, "status": status, "committeeName": committeeName, "lastModifiedAt": lastModifiedAt, "introducedAt": introducedAt, "passedAt": passedAt, "enactedAt": enactedAt, "agendaDate": agendaDate, "enactmentNumber": enactmentNumber, "updatedAt": updatedAt, "postDate": postDate, "liked": liked, "likeCount": likeCount])
       }
 
       public var __typename: String {
@@ -342,8 +342,8 @@ public final class CreateLikeMutation: GraphQLMutation {
           self.resultMap = unsafeResultMap
         }
 
-        public init(id: GraphQLID, shortDescription: String, longDescription: String, billWould: String, fileNumber: String, typeName: String, status: MatterStatus, committeeName: String, lastModifiedAt: String, introducedAt: String, passedAt: String, enactedAt: String, agendaDate: String, enactmentNumber: String, updatedAt: String, liked: Bool, likeCount: Int) {
-          self.init(unsafeResultMap: ["__typename": "Matter", "id": id, "shortDescription": shortDescription, "longDescription": longDescription, "billWould": billWould, "fileNumber": fileNumber, "typeName": typeName, "status": status, "committeeName": committeeName, "lastModifiedAt": lastModifiedAt, "introducedAt": introducedAt, "passedAt": passedAt, "enactedAt": enactedAt, "agendaDate": agendaDate, "enactmentNumber": enactmentNumber, "updatedAt": updatedAt, "liked": liked, "likeCount": likeCount])
+        public init(id: GraphQLID, shortDescription: String, longDescription: String, billWould: String, fileNumber: String, typeName: String, status: MatterStatus, committeeName: String, lastModifiedAt: String, introducedAt: String, passedAt: String, enactedAt: String, agendaDate: String, enactmentNumber: String, updatedAt: String, postDate: String, liked: Bool, likeCount: Int) {
+          self.init(unsafeResultMap: ["__typename": "Matter", "id": id, "shortDescription": shortDescription, "longDescription": longDescription, "billWould": billWould, "fileNumber": fileNumber, "typeName": typeName, "status": status, "committeeName": committeeName, "lastModifiedAt": lastModifiedAt, "introducedAt": introducedAt, "passedAt": passedAt, "enactedAt": enactedAt, "agendaDate": agendaDate, "enactmentNumber": enactmentNumber, "updatedAt": updatedAt, "postDate": postDate, "liked": liked, "likeCount": likeCount])
         }
 
         public var __typename: String {
@@ -406,6 +406,7 @@ public struct DisplayableMatter: GraphQLFragment {
       agendaDate
       enactmentNumber
       updatedAt
+      postDate
       liked
       likeCount
     }
@@ -431,6 +432,7 @@ public struct DisplayableMatter: GraphQLFragment {
       GraphQLField("agendaDate", type: .nonNull(.scalar(String.self))),
       GraphQLField("enactmentNumber", type: .nonNull(.scalar(String.self))),
       GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+      GraphQLField("postDate", type: .nonNull(.scalar(String.self))),
       GraphQLField("liked", type: .nonNull(.scalar(Bool.self))),
       GraphQLField("likeCount", type: .nonNull(.scalar(Int.self))),
     ]
@@ -442,8 +444,8 @@ public struct DisplayableMatter: GraphQLFragment {
     self.resultMap = unsafeResultMap
   }
 
-  public init(id: GraphQLID, shortDescription: String, longDescription: String, billWould: String, fileNumber: String, typeName: String, status: MatterStatus, committeeName: String, lastModifiedAt: String, introducedAt: String, passedAt: String, enactedAt: String, agendaDate: String, enactmentNumber: String, updatedAt: String, liked: Bool, likeCount: Int) {
-    self.init(unsafeResultMap: ["__typename": "Matter", "id": id, "shortDescription": shortDescription, "longDescription": longDescription, "billWould": billWould, "fileNumber": fileNumber, "typeName": typeName, "status": status, "committeeName": committeeName, "lastModifiedAt": lastModifiedAt, "introducedAt": introducedAt, "passedAt": passedAt, "enactedAt": enactedAt, "agendaDate": agendaDate, "enactmentNumber": enactmentNumber, "updatedAt": updatedAt, "liked": liked, "likeCount": likeCount])
+  public init(id: GraphQLID, shortDescription: String, longDescription: String, billWould: String, fileNumber: String, typeName: String, status: MatterStatus, committeeName: String, lastModifiedAt: String, introducedAt: String, passedAt: String, enactedAt: String, agendaDate: String, enactmentNumber: String, updatedAt: String, postDate: String, liked: Bool, likeCount: Int) {
+    self.init(unsafeResultMap: ["__typename": "Matter", "id": id, "shortDescription": shortDescription, "longDescription": longDescription, "billWould": billWould, "fileNumber": fileNumber, "typeName": typeName, "status": status, "committeeName": committeeName, "lastModifiedAt": lastModifiedAt, "introducedAt": introducedAt, "passedAt": passedAt, "enactedAt": enactedAt, "agendaDate": agendaDate, "enactmentNumber": enactmentNumber, "updatedAt": updatedAt, "postDate": postDate, "liked": liked, "likeCount": likeCount])
   }
 
   public var __typename: String {
@@ -587,6 +589,15 @@ public struct DisplayableMatter: GraphQLFragment {
     }
     set {
       resultMap.updateValue(newValue, forKey: "updatedAt")
+    }
+  }
+
+  public var postDate: String {
+    get {
+      return resultMap["postDate"]! as! String
+    }
+    set {
+      resultMap.updateValue(newValue, forKey: "postDate")
     }
   }
 
