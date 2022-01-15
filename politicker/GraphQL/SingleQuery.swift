@@ -2,7 +2,7 @@
 // Created by Harrison Borges on 1/9/22.
 //
 
-import Foundation
+import Combine
 import Apollo
 
 public class SingleQuery<Query: GraphQLQuery>: ObservableObject {
