@@ -19,10 +19,10 @@
 		7B715F319FCE586DF5AF0E9E /* SingleQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B715747B41B6BE4090F18C1 /* SingleQuery.swift */; };
 		7B715F6E6CFC1A3CC6338531 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B715785574271E573ED007A /* Network.swift */; };
 		8428D2CB277A354C004E546A /* politickerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8428D2CA277A354C004E546A /* politickerApp.swift */; };
-		8428D2CF277A354D004E546A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8428D2CE277A354D004E546A /* Assets.xcassets */; };
 		8428D2D2277A354D004E546A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8428D2D1277A354D004E546A /* Preview Assets.xcassets */; };
 		8428D2E4277A77E2004E546A /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 8428D2E3277A77E2004E546A /* Apollo */; };
 		8428D2E6277A77E2004E546A /* ApolloCodegenLib in Frameworks */ = {isa = PBXBuildFile; productRef = 8428D2E5277A77E2004E546A /* ApolloCodegenLib */; };
+		84AA4279278D0DB100B0FA29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84AA4278278D0DB100B0FA29 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +39,8 @@
 		7B715DE2CB667697F3E2F8B7 /* MatterStatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatterStatusView.swift; sourceTree = "<group>"; };
 		8428D2C7277A354C004E546A /* politicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = politicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8428D2CA277A354C004E546A /* politickerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = politickerApp.swift; sourceTree = "<group>"; };
-		8428D2CE277A354D004E546A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8428D2D1277A354D004E546A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		84AA4278278D0DB100B0FA29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Downloads/AppIcons/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				8428D2CA277A354C004E546A /* politickerApp.swift */,
-				8428D2CE277A354D004E546A /* Assets.xcassets */,
+				84AA4278278D0DB100B0FA29 /* Assets.xcassets */,
 				8428D2D0277A354D004E546A /* Preview Content */,
 				7B715EB081168C7E5DE145B3 /* Features */,
 				7B71516A3A5D3C496CFB670A /* GraphQL */,
@@ -224,7 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8428D2D2277A354D004E546A /* Preview Assets.xcassets in Resources */,
-				8428D2CF277A354D004E546A /* Assets.xcassets in Resources */,
+				84AA4279278D0DB100B0FA29 /* Assets.xcassets in Resources */,
 				7B71555D1F29486BD1FF2F2B /* Operations.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,7 +396,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"politicker/Preview Content\"";
 				DEVELOPMENT_TEAM = CHZPTSK255;
 				ENABLE_PREVIEWS = YES;
@@ -426,7 +426,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"politicker/Preview Content\"";
 				DEVELOPMENT_TEAM = CHZPTSK255;
 				ENABLE_PREVIEWS = YES;
